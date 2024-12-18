@@ -88,7 +88,7 @@
                     <li>
                         <a href="../PHP/logout.php" class="sidebar-link"> <!-- Cambiado aquí -->
                             <i class="lni lni-exit"></i>
-                            <span>Cerrar Sesion</span>
+                            <span>Cerrar Sesión</span>
                         </a>
                     </li>
                     </ul>
@@ -112,16 +112,16 @@
                     <th>Nombre Solicitante</th>
                     <th>Dependencia Solicitante</th>
                     <th>Grupo Dependencia</th>
-                    <th>Lugar de Practicas</th>
-                    <th>Nivel Academico</th>
-                    <th>Programa Academico</th>
+                    <th>Lugar de Prácticas</th>
+                    <th>Nivel Académico</th>
+                    <th>Programa Académico</th>
                     <th>Nombre del Cargo</th>
-                    <th>Descripcion del cargo</th>
+                    <th>Descripción del cargo</th>
                     <th>N° Practicantes</th>
                     <th>Modalidad Practicas</th>
                     <th>Actividad a Desarrollar</th>
-                    <th>Accion</th>
-                    <th>Accion</th>
+                    <th>Acción</th>
+                    <th>Acción</th>
                 </tr>
             </thead>
             <tbody id="tableBody">
@@ -185,15 +185,15 @@
                                                 <input type="text" class="form-control" id="Grupo_Solici" name="Grupo_Solici" value="<?php echo $mostrar['Grupo_Solici']; ?>" required>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="Lugar_practica" class="form-label">Lugar de practicas</label>
+                                                <label for="Lugar_practica" class="form-label">Lugar de prácticas</label>
                                                 <input type="text" class="form-control" id="Lugar_practica" name="Lugar_practica" value="<?php echo $mostrar['Lugar_practica']; ?>" required>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="Nivel_academico" class="form-label">Nivel academico</label>
+                                                <label for="Nivel_academico" class="form-label">Nivel académico</label>
                                                 <input type="text" class="form-control" id="Nivel_academico" name="Nivel_academico" value="<?php echo $mostrar['Nivel_academico']; ?>" required>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="Programa_academico" class="form-label">Programa academico</label>
+                                                <label for="Programa_academico" class="form-label">Programa académico</label>
                                                 <input type="text" class="form-control" id="Programa_academico" name="Programa_academico"  value="<?php echo $mostrar['Programa_academico']; ?>" required>
                                             </div>
                                             <div class="mb-3">
@@ -201,7 +201,7 @@
                                                 <input type="text" class="form-control" id="Cargo_solici" name="Cargo_solici" value="<?php echo $mostrar['Cargo_solici']; ?>" required>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="Descrip_cargo" class="form-label">Descripcion del cargo</label>
+                                                <label for="Descrip_cargo" class="form-label">Descripción del cargo</label>
                                                 <input type="text" class="form-control" id="Descrip_cargo" name="Descrip_cargo" value="<?php echo $mostrar['Descrip_cargo']; ?>" required>
                                             </div>
                                             <div class="mb-3">

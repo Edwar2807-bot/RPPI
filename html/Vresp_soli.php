@@ -49,7 +49,7 @@
                 <li class="sidebar-item">
                     <a href="VFormacion_Th.php" class="sidebar-link">
                         <i class="lni lni-library"></i>
-                        <span>Formacion</span>
+                        <span>Formación</span>
                     </a>
                 </li><br>
                 <li class="sidebar-item">
@@ -73,7 +73,7 @@
                 <li class="sidebar-item">
                     <a href="VForm_pas_th.php" class="sidebar-link">
                         <i class="lni lni-user"></i>
-                        <span>Formalizacion  pasanias</span>
+                        <span>Formalización pasantías</span>
                     </a>
                 </li>
             </ul>
@@ -87,7 +87,7 @@
                     <li>
                         <a href="../PHP/logout.php" class="sidebar-link"> <!-- Cambiado aquí -->
                             <i class="lni lni-exit"></i>
-                            <span>Cerrar Sesion</span>
+                            <span>Cerrar Sesión</span>
                         </a>
                     </li>
                     </ul>
@@ -105,12 +105,12 @@
                         <input type="text" class="form-control2" id="Fechat" name="Fechat" placeholder="Seleccione la entidad"  required>
                         </div>
                         <div class="form-row">
-                            <label class="lb1" for="Dpas">Duracion de pasantias</label>
-                            <label class="lb4" for="Fipas">Fecha de inicio de pasantias</label>
+                            <label class="lb1" for="Dpas">Duración de pasantías</label>
+                            <label class="lb4" for="Fipas">Fecha de inicio de pasantías</label>
                         </div>
                         <div class="form-row1">
                             <select id="Duracion" class="form-control1" name="Duracion" required>
-                                <option value="1">Seleccionar Duracion</option>
+                                <option value="1">Seleccionar Duración</option>
                                 <option value="2">3 Meses</option>
                                 <option value="3">6 Meses</option>
                                 <option value="4">9 Meses</option>
@@ -119,20 +119,20 @@
                             <input type="date" class="form-control2" id="Fipas" name="Fipas" required>
                         </div>
                         <div class="form-row">
-                            <label class="lb1" for="Apas">Area de pasantias</label>
-                            <label class="lb5" for="Apas">Area solicitada a pasantias</label>
+                            <label class="lb1" for="Apas">Área de pasantías</label>
+                            <label class="lb5" for="Apas">Área solicitada a pasantías</label>
                         </div>
                         <div class="form-row1">
                             <select id="Area" class="form-control1" name="Area" required>
-                                <option value="1">Seleccionar Area</option>
-                                <option value="2">Oficina de tecnologias</option>
+                                <option value="1">Seleccionar Área</option>
+                                <option value="2">Oficina de tecnologías</option>
                                 <option value="3">Soporte</option>
                                 <option value="4">Contractual</option>
                             </select> 
                             <input type="text" class="form-control2" id="Apas" name="Apas" placeholder="Area solicitada" required>
                         </div>
                         <div class="form-row">
-                            <label class="lb1" for="Clab">Aceptacion de solicitud</label>
+                            <label class="lb1" for="Clab">Aceptación de solicitud</label>
                         </div>
                         <div class="form-row1">
                             <select id="Area" class="form-control1" name="Area" required>

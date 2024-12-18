@@ -49,7 +49,7 @@
                 <li class="sidebar-item">
                     <a href="VFormacion_Th.php" class="sidebar-link">
                         <i class="lni lni-library"></i>
-                        <span>Formacion</span>
+                        <span>Formación</span>
                     </a>
                 </li><br>
                 <li class="sidebar-item">
@@ -73,20 +73,20 @@
                 <li class="sidebar-item">
                     <a href="VForm_pas_th.php" class="sidebar-link">
                         <i class="lni lni-user"></i>
-                        <span>Formalizacion  pasanias</span>
+                        <span>Formalización pasantías</span>
                     </a>
                 </li>
             </ul>
         </aside>
         <div class="main">
             <nav class="navbar navbar-expand px-4 py-3"><br>
-                <h3>Formalizacion pasantias</h3><br>
+                <h3>Formalización pasantías</h3><br>
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav ms-auto">
                     <li>
                         <a href="../PHP/logout.php" class="sidebar-link"> <!-- Cambiado aquí -->
                             <i class="lni lni-exit"></i>
-                            <span>Cerrar Sesion</span>
+                            <span>Cerrar Sesión</span>
                         </a>
                     </li>
                     </ul>   
@@ -107,7 +107,7 @@
                             <tr>
                                 <th>Id</th>
                                 <th>Conflicto de intereses</th>
-                                <th>Certificacion de ARL</th>
+                                <th>Certificación de ARL</th>
                                 <th>Acta de confidencialidad</th>
                                 <th>Certificacion de EPS</th>
                             </tr>
@@ -147,12 +147,12 @@
                                             <form action="../Controllers/FormacionController2.php" method="POST">
                                                 <input type="hidden" name="Id_formacion" value="<?php echo $mostrar['Id_formacion']; ?>">
                                                 <div class="mb-3">
-                                                    <label for="Respuesta1" class="form-label">Tipo de educacion</label>
+                                                    <label for="Respuesta1" class="form-label">Tipo de educación</label>
                                                     <select id="Tipo_educacion" class="form-control" name="Tipo_educacion" value="<?php echo $mostrar['Tipo_educacion']; ?>">
-                                                        <option value="">Seleccionar Tipo de educacion</option>
-                                                        <option value="Educacion formal">Educacion formal</option>
-                                                        <option value="Educacion no formal">Educacion no formal</option>
-                                                        <option value="Educacion informal">Educacion informal</option>
+                                                        <option value="">Seleccionar Tipo de educación</option>
+                                                        <option value="Educacion formal">Educación formal</option>
+                                                        <option value="Educacion no formal">Educación no formal</option>
+                                                        <option value="Educacion informal">Educación informal</option>
                                                     </select>
                                                 </div>
                                                 <div class="mb-3">
@@ -168,7 +168,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label for="Respuesta3" class="form-label">Institucion</label>
+                                                    <label for="Respuesta3" class="form-label">Institución</label>
                                                     <input type="Text" class="form-control" id="Institucion" name="Institucion" placeholder="Ingrese el nombre de la Institucion" value="<?php echo $mostrar['Institucion']; ?>">
                                                 </div>
                                                 <div class="mb-3">
@@ -176,7 +176,7 @@
                                                     <input type="Text" class="form-control" id="Programa" name="Programa" placeholder="Ingrese el nombre del programa" value="<?php echo $mostrar['Programa']; ?>">
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label for="Respuesta5" class="form-label">Fecha de terminacion</label>
+                                                    <label for="Respuesta5" class="form-label">Fecha de terminación</label>
                                                     <input type="date" class="form-control" id="Fec_terminacion" name="Fec_terminacion" value="<?php echo $mostrar['Fec_terminacion']; ?>">
                                                     <input type="hidden" name="Id_informacion_personal_form_fk" value="<?php echo $mostrar['Id_informacion_personal_form_fk']; ?>">
                                                 </div>

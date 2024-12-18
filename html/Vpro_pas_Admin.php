@@ -87,7 +87,7 @@
                     <li>
                             <a href="../PHP/logout.php" class="sidebar-link"> <!-- Cambiado aquí -->
                                 <i class="lni lni-exit"></i>
-                                <span>Cerrar Sesion</span>
+                                <span>Cerrar Sesión</span>
                             </a>
                         </li>
                     </ul>
@@ -100,7 +100,7 @@
                         <span class="input-group-text" id="search-addon"><i class="lni lni-search"></i></span>
                         <input type="text" class="form-control" id="searchInput" placeholder="Buscar..." aria-label="Buscar" aria-describedby="search-addon">
                     </div>
-                    <button class="btn btn-primary" onclick="location.href='Vpro_pas1_Admin.php'">Agregar Nueva proyecto</button>
+                    <button class="btn btn-primary" onclick="location.href='Vpro_pas1_Admin.php'">Agregar Nuevo proyecto</button>
                 </div>
                 <!-- Tabla -->
                 <div style="max-height: 400px; overflow-y: auto;">
@@ -109,8 +109,8 @@
                             <tr>
                                 <th>Id</th>
                                 <th>Nombre Proyecto</th>
-                                <th>Descripcion Proyecto</th>
-                                <th>¿Aceptacion tutor?</th>
+                                <th>Descripción Proyecto</th>
+                                <th>¿Aceptación tutor?</th>
                                 <th>Documentos proyecto</th>
                                 <th>Acción</th>
                                 <th>Acción</th>
@@ -162,11 +162,11 @@
                                                     <input type="text" class="form-control" name="Nombre_proy" value="<?php echo $mostrar['Nombre_proy']; ?>">
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label for="Descripcion_proy" class="form-label">Descripcion proyecto</label>
+                                                    <label for="Descripcion_proy" class="form-label">Descripción proyecto</label>
                                                     <input type="text" class="form-control" name="Descripcion_proy" value="<?php echo $mostrar['Descripcion_proy']; ?>">
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label for="Acept_tutor" class="form-label">Aceptacion tutor</label>
+                                                    <label for="Acept_tutor" class="form-label">Aceptación tutor</label>
                                                     <input type="text" class="form-control" name="Acept_tutor" value="<?php echo $mostrar['Acept_tutor']; ?>">
                                                 </div>
                                                 <div class="mb-3">
@@ -224,7 +224,7 @@
                     <thead class="table-dark">
                         <tr>
                             <th>Id</th>
-                            <th>Descripcion Actividad</th>
+                            <th>Descripción Actividad</th>
                             <th>Fecha Actividad</th>
                             <th>Acción</th>
                             <th>Acción</th>
@@ -270,7 +270,7 @@
                                         <form action="../Controllers/ActividadController_Admin.php" method="POST">
                                             <input type="hidden" name="Id_actividad" value="<?php echo $mostrar['Id_actividad']; ?>">
                                             <div class="mb-3">
-                                                <label for="Descripcion_actividad" class="form-label">Descripcion Actividad</label>
+                                                <label for="Descripcion_actividad" class="form-label">Descripción Actividad</label>
                                                 <input type="text" class="form-control" name="Descripcion_actividad" value="<?php echo $mostrar['Descripcion_actividad']; ?>">
                                             </div>
                                             <div class="mb-3">

@@ -99,7 +99,7 @@ if (!isset($_SESSION['Correo'])) {
                             <li>
                                 <a href="../PHP/logout.php" class="sidebar-link"> <!-- Cambiado aquí -->
                                     <i class="lni lni-exit"></i>
-                                    <span>Cerrar Sesion</span>
+                                    <span>Cerrar sesión</span>
                                 </a>
                             </li>
                         </ul>
@@ -202,7 +202,7 @@ if (!isset($_SESSION['Correo'])) {
                                         <div class="card-body py-4">
                                             <a href="VEstadoproce_Admin.php" class="div text-decoration-none">
                                                 <h5 class="fw-bold d-flex align-items-center">
-                                                    Estado proc 
+                                                    Estado del proceso 
                                                     <i class="lni lni-spinner"></i>
                                                 </h5>
                                             </a>
@@ -218,7 +218,7 @@ if (!isset($_SESSION['Correo'])) {
                                         <div class="card-body py-4">
                                             <a href="VPost_pas_Admin.php" class="div text-decoration-none">
                                                 <h5 class="fw-bold d-flex align-items-center">
-                                                    Postulacion Pas 
+                                                    Postulación Pas 
                                                     <i class="lni lni-book"></i>
                                                 </h5>
                                             </a>

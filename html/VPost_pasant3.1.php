@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
-    <title>Postulacion Pasantias | INVIMA</title>
+    <title>Postulación Pasantías | INVIMA</title>
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -48,7 +48,7 @@
                 <li class="sidebar-item">
                     <a href="VFormacion3.php" class="sidebar-link">
                         <i class="lni lni-library"></i>
-                        <span>Formacion</span>
+                        <span>Formación</span>
                     </a>
                 </li><br>
                 <li class="sidebar-item">
@@ -72,27 +72,27 @@
                 <li class="sidebar-item">
                     <a href="Vpro_pas.php" class="sidebar-link">
                         <i class="lni lni-pencil-alt"></i>
-                        <span>proyecto de pasantias</span>
+                        <span>Proyecto de pasantías</span>
                     </a>
                 </li><br>
                 <li class="sidebar-item">
                     <a href="VEval_tut_tabla.php" class="sidebar-link">
                         <i class="lni lni-notepad"></i>
-                        <span>Evaluacion tutor</span>
+                        <span>Evaluación tutor</span>
                     </a>
                 </li>
             </ul>
         </aside>
         <div class="main">
             <nav class="navbar navbar-expand px-4 py-3"><br>
-                <h3>Postulacion de pasantias</h3><br>
+                <h3>Postulación de pasantías</h3><br>
 
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav ms-auto">
                         <li>
                             <a href="../PHP/logout.php" class="sidebar-link"> <!-- Cambiado aquí -->
                                 <i class="lni lni-exit"></i>
-                                <span>Cerrar Sesion</span>
+                                <span>Cerrar Sesión</span>
                             </a>
                         </li>
                     </ul>
@@ -110,21 +110,21 @@
                             <input type="text" class="form-control2" id="Programa_pasantias" name="Programa_pasantias"  placeholder="Digite el programa" required>
                         </div>
                         <div class="form-row">
-                            <label class="lb1" for="Medio_ent">Medio por el cual se entero</label>
-                            <label class="lb3" for="Area_pas">Area de pasantias</label>
+                            <label class="lb1" for="Medio_ent">Medio por el cual se enteró</label>
+                            <label class="lb3" for="Area_pas">Área de pasantías</label>
                         </div>
                         <div class="form-row1">
                             <input type="text" class="form-control1" id="Medio_ent" name="Medio_ent"  placeholder="Digite el medio" required>
                             <select id="Area_pas" class="form-control2" name="Area_pas" required>
-                                <option value="">Seleccionar Area</option>
-                                <option value="OTI">Oficina de tecnologias</option>
+                                <option value="">Seleccionar Área</option>
+                                <option value="OTI">Oficina de tecnologías</option>
                                 <option value="Soporte">Soporte</option>
                                 <option value="Contractual">Contractual</option>
                             </select>                        
                         </div>
                         <div class="form-row">
                             <label class="lb1" for="Hoja_vida">Hoja de vida</label>
-                            <label class="lb2" for="Carta_presentacion">Carta de presentacion</label>
+                            <label class="lb2" for="Carta_presentacion">Carta de presentación</label>
                         </div>
                         <div class="form-row1">
                             <input type="file" class="form-control1" id="Hoja_vida" name="Hoja_vida"   required>
@@ -132,12 +132,12 @@
                         </div>
                         <div class="form-row">
                             <label class="lb1" for="Documento_id">Documento de indentidad</label>
-                            <label class="lb4" for="Duracion">Duracion de las pasantias</label>
+                            <label class="lb4" for="Duracion">Duración de las pasantías</label>
                         </div>
                         <div class="form-row1">
                             <input type="file" class="form-control1" id="Documento_id" name="Documento_id" required>
                             <select id="Duracion" class="form-control2" name="Duracion" required>
-                                <option value="">Seleccionar Duracion</option>
+                                <option value="">Seleccionar Duración</option>
                                 <option value="3 Meses">3 Meses</option>
                                 <option value="6 Meses">6 Meses</option>
                                 <option value="9 Meses">9 Meses</option>
@@ -145,7 +145,7 @@
                             </select>                          
                         </div>
                         <div class="form-row">
-                            <label class="lb1" for="Fec_ini_pas">Fecha de inicio pasantias</label>
+                            <label class="lb1" for="Fec_ini_pas">Fecha de inicio pasantías</label>
                         </div>
                         <div class="form-row1">
                             <input type="date" class="form-control1" id="Fec_ini_pas" name="Fec_ini_pas"  placeholder="Fecha de inicio pasantias" required>

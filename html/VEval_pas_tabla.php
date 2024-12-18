@@ -48,7 +48,7 @@
                 <li class="sidebar-item">
                     <a href="VFormacion_tutor.php" class="sidebar-link">
                         <i class="lni lni-library"></i>
-                        <span>Formacion</span>
+                        <span>Formación</span>
                     </a>
                 </li><br>
                 <li class="sidebar-item">
@@ -79,13 +79,13 @@
         </aside>
         <div class="main">
             <nav class="navbar navbar-expand px-4 py-3"><br>
-                <h3>Evaluacion Pasante</h3><br>
+                <h3>Evaluación Pasante</h3><br>
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav ms-auto">
                     <li>
                         <a href="../PHP/logout.php" class="sidebar-link"> <!-- Cambiado aquí -->
                             <i class="lni lni-exit"></i>
-                            <span>Cerrar Sesion</span>
+                            <span>Cerrar Sesión</span>
                         </a>
                     </li>
                     </ul>
@@ -105,7 +105,7 @@
                 <table class="table table-bordered table-hover">
                     <thead class="table-dark">
                         <tr>
-                            <th>Id evaluacion pasante </th>
+                            <th>Id evaluación pasante </th>
                             <th>¿Cumplió con los horarios?</th>
                             <th>¿Cumplió con el proyecto?</th>
                             <th>¿Cumplió con el reglamento?</th>
@@ -156,7 +156,7 @@
                                         <form action="../Controllers/EvaluacionpasanteController.php" method="POST">
                                             <input type="hidden" name="Id_evaluacion_pasante" value="<?php echo $mostrar['Id_evaluacion_pasante']; ?>">
                                             <div class="mb-3">
-                                                <label for="Proyecto_eval_pasante" class="form-label">Proyecto Evaluacion Pasante</label>
+                                                <label for="Proyecto_eval_pasante" class="form-label">Proyecto Evaluación Pasante</label>
                                                 <input type="text" class="form-control" name="Proyecto_eval_pasante" value="<?php echo $mostrar['Proyecto_eval_pasante']; ?>">
                                             </div>
                                             <div class="mb-3">
@@ -164,11 +164,11 @@
                                                 <input type="text" class="form-control" name="Horario_eval_pasante" value="<?php echo $mostrar['Horario_eval_pasante']; ?>">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="Reglamento_eval_pasante" class="form-label">Reglamento Evaluacion Pasante</label>
+                                                <label for="Reglamento_eval_pasante" class="form-label">Reglamento Evaluación Pasante</label>
                                                 <input type="text" class="form-control" name="Reglamento_eval_pasante" value="<?php echo $mostrar['Reglamento_eval_pasante']; ?>">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="Concepto_eval_pasante" class="form-label">Concepto evaluacion Pasante</label>
+                                                <label for="Concepto_eval_pasante" class="form-label">Concepto Evaluación Pasante</label>
                                                 <input type="text" class="form-control" name="Concepto_eval_pasante" value="<?php echo $mostrar['Concepto_eval_pasante']; ?>">
                                             </div>
                                             <button type="submit" name="updateEvaluacionpasante" class="btn btn-primary">Guardar cambios</button>
@@ -217,8 +217,8 @@
                 <table class="table table-bordered table-hover">
                     <thead class="table-dark">
                         <tr>
-                            <th>Id llamado atencion</th>
-                            <th>Descripcion llamado atencion</th>
+                            <th>Id llamado atención</th>
+                            <th>Descripcion llamado atención</th>
                             <th>Acción</th>
                             <th>Acción</th>
                         </tr>
