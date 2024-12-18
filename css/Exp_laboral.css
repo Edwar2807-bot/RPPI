@@ -1,0 +1,168 @@
+/* Styles for header */
+#div-gov_co {
+    padding-left: 150px; /* Espacio a la izquierda para no pegar al borde */
+}
+
+#logo-container {
+    padding-left: 150px; /* Añadir espacio para que no esté pegado al borde izquierdo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra al final del contenedor */
+    height: 80px; /* Ajusta la altura según sea necesario */
+    display: flex;
+    justify-content: center; /* Centrar verticalmente el contenido */
+}
+
+#logo-invima-header {
+    width: 200px;
+    height: auto;
+}
+
+.welcomeDiv {
+    padding: 10px;
+}
+
+.user-menu {
+    right: 50%;
+    top: 65%;
+    min-width: 200px !important;
+}
+
+.user-icon:hover + div + .user-menu,
+.user-icon:hover ~ .user-menu,
+.user-menu:hover {
+    display: block;
+}
+
+.block-logo-invima-header {
+    padding: 10%;
+    height: 80px;
+}
+
+.main-index {
+    background-color: #F9F9F9;
+    padding-bottom: 8.5rem;
+}
+
+.container-login {
+    background: white;
+    margin: 80px;
+    border-radius: 12px;
+    padding: 80px;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.16);
+}
+
+/* Body */
+.col-md-6 {
+    max-width: 400px;
+    margin: auto;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.title1 {
+    text-align: center;
+}
+
+.input-group{
+    width: 350px;
+    height: 45px;
+}
+
+.btn{
+    background-color: #39A5C7;
+    color: #ffffff;
+    border: none;
+    padding: 5px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #ffffff;
+    color: #39A5C7;
+    border:  1px solid #39A5C7;
+}
+
+
+
+.control-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.control-container .form-control,
+.control-container .form-select,
+.control-container .btn {
+    margin-right: 15px;
+}
+.control-container .form-control:last-child,
+.control-container .form-select:last-child,
+.control-container .btn:last-child {
+    margin-right: 0;
+}
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid #ffffff;
+}
+.table thead th {
+    border-bottom: 2px solid #dee2e6;
+    background-color: #ffffff;
+    color: #030303;
+}
+.table tbody th {
+    background-color: #fff;
+    font-weight: bold;
+    color: #343a40;
+}
+.table thead th:first-child {
+    background-color: #fff;
+    color: #000000;
+}
+.table-bordered th,
+.table-bordered td {
+    border-top: none;
+    border-bottom: none;
+}
+.table-bordered tr:first-child th,
+.table-bordered tr:first-child td {
+    border-top: 1px solid #ffffff;
+}
+.table-bordered tr:last-child th,
+.table-bordered tr:last-child td {
+    border-bottom: 1px solid #ffffff;
+}
+
+/* Styles footer */
+footer {
+    background: var(--header-header-Gradiente, linear-gradient(90deg, #139EC8 0%, #01599A 100%));
+    color: #4b4b4b;
+    position: relative; /* Asegura que el footer esté en un contexto de posición */
+    overflow: visible; /* Cambiar a visible para mostrar bordes */
+}
+
+#principal-section-footer {
+    border: 2px solid #e5eefb;
+    border-radius: 10px;
+    opacity: 1;
+    background: white; /* Fondo blanco para el contenedor */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para diferenciar del fondo */
+    position: relative; /* Mantener relativo para moverlo respecto al footer */
+    margin-top: -100px; /* Ajusta este valor para mover hacia arriba */
+    z-index: 10; /* Asegura que esté por encima del fondo */
+}
+
+.region-footer {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Responsive */
+@media screen and (max-width: 1580px) {
+    footer{
+        padding: 80px 100px;
+    }
+  }

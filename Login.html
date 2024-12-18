@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Inicio de sesión | INVIMA</title>
+    <style>
+        .input-group {
+            position: relative;
+        }
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #6c757d; /* Color neutral */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="bg-primary w-100 d-flex justify-content-start align-items-center" id="div-gov_co">
+            <img src="img/logo_govco (1).png" alt="img gov.co" class="py-2" height="45px">
+        </div>
+        <div class="w-100 d-flex flex-column justify-content-center align-items-start py-2" id="logo-container">
+            <img src="img/Recurso 2@4x.png" alt="Logo- Invima" id="logo-invima-header">
+            <div class="input-wrapper d-flex align-items-center"></div>            
+        </div>
+    </header> 
+    <br>
+    <div class="container">
+        <div class="login-container">
+            <div class="col-md-6">
+                <h2 class="title">Registro y postulación de pasantes Invima (RPPI)</h2>
+                <h6 class="title1">¡Bienvenido de nuevo!</h6>
+                <h4 class="title1">Inicia Sesión</h4><br>
+                <div class="form-login">
+                    <form action="PHP/login.php" method="POST">
+                        <div class="form-group">
+                            <label for="email">Dirección de correo electrónico</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Dirección de correo electrónico" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Contraseña</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="pwd" name="password" placeholder="Contraseña" required>
+                                <span class="toggle-password" id="togglePassword">
+                                    <i class="fas fa-eye"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-sesion">Iniciar sesión</button>
+                        <br><br>
+                        <a href="html/VRegistro.php" class="btn-reg">Registrarse</a>
+                        <a href="html/VOlvido_contra.php" class="forgot-password">¿Olvidó su Contraseña?</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <footer>
+        <div class="container container-footer mb-5 px-4 py-5" id="principal-section-footer">
+            <div class="region region-footer">
+                <div class="d-block">
+                    <div id="block-invima-theme-logofooter-2"
+                        class="col-12 block-footer-section-logo col-md-3">
+                        <div class="">
+                            <img loading="lazy" src="img/invima.png" width="134"  alt="Logo Invima" class="mb-25">
+                        </div>
+                    </div>
+                    <div id="" class="block-footer-section-info col-12 col-md-5">
+                        <div
+                            class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
+                            <p><strong>Sede principal:</strong> Carrera 10 #64 - 28 Bogotá, Colombia</p>
+                            <p><strong>Teléfono conmutador:</strong> (+57)(601) 242 50 00</p>
+                            <p><strong>Horario de atención:</strong> Lunes a Viernes 7:30 a.m. a 3:30 p.m.</p>
+                            <p><strong>Notificaciones Judiciales: </strong><a
+                                    href="mailto:notificaciones_judiciales@invima.gov.co">notificaciones_judiciales@invima.gov.co</a>
+                            </p>
+                            <p><strong>Transparencia Invima: </strong><a
+                                    href="mailto:soytransparente@invima.gov.co">soytransparente@invima.gov.co</a></p>
+                        </div>
+                    </div>
+                    <div id="" class="col-12">
+                        <div class="">
+                            <img loading="lazy" src="img/logo gov-co.png" width="173" alt="logo gov co footer" class="fluid-logo-right">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const togglePassword = document.querySelector('#togglePassword');
+        const passwordInput = document.querySelector('#pwd');
+
+        togglePassword.addEventListener('click', function () {
+            // Cambiar el tipo de input de password a text o viceversa
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            // Cambiar el ícono
+            this.querySelector('i').classList.toggle('fa-eye');
+            this.querySelector('i').classList.toggle('fa-eye-slash');
+        });
+    </script>
+</body>
+</html>

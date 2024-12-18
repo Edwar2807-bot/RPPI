@@ -1,0 +1,6 @@
+{
+    "require": {
+        "php": "7.4.*",
+        "microsoft/azure-storage-blob": "^1.5"
+    }
+}
