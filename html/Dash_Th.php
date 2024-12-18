@@ -64,7 +64,7 @@ if (!isset($_SESSION['Correo'])) {
                     <li class="sidebar-item">
                         <a href="VFormacion_Th.php" class="sidebar-link">
                             <i class="lni lni-library"></i>
-                            <span>Formacion</span>
+                            <span>Formación</span>
                         </a>
                     </li><br>
                     <li class="sidebar-item">
