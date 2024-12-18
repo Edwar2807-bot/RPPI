@@ -51,7 +51,7 @@
                 <li class="sidebar-item">
                     <a href="VFormacion2.php" class="sidebar-link">
                         <i class="lni lni-library"></i>
-                        <span>Formacion</span>
+                        <span>Formación</span>
                     </a>
                 </li><br>
                 <li class="sidebar-item">
@@ -75,7 +75,7 @@
                 <li class="sidebar-item">
                     <a href="Vform_pas.php" class="sidebar-link">
                         <i class="lni lni-user"></i>
-                        <span>Formalizacion pasantias</span>
+                        <span>Formalización pasantías</span>
                     </a>
                 </li>
             </ul>
@@ -88,7 +88,7 @@
                     <li>
                         <a href="../PHP/logout.php" class="sidebar-link"> <!-- Cambiado aquí -->
                             <i class="lni lni-exit"></i>
-                            <span>Cerrar Sesion</span>
+                            <span>Cerrar Sesión</span>
                         </a>
                     </li>
                     </ul>

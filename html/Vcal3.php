@@ -51,7 +51,7 @@
                 <li class="sidebar-item">
                     <a href="VFormacion3.php" class="sidebar-link">
                         <i class="lni lni-library"></i>
-                        <span>Formacion</span>
+                        <span>Formación</span>
                     </a>
                 </li><br>
                 <li class="sidebar-item">
@@ -75,13 +75,13 @@
                 <li class="sidebar-item">
                     <a href="Vpro_pas.php" class="sidebar-link">
                         <i class="lni lni-pencil-alt"></i>
-                        <span>proyecto de pasantias</span>
+                        <span>Proyecto de pasantías</span>
                     </a>
                 </li><br>
                 <li class="sidebar-item">
                     <a href="VEval_tut_tabla.php" class="sidebar-link">
                         <i class="lni lni-notepad"></i>
-                        <span>Evaluacion tutor</span>
+                        <span>Evaluación tutor</span>
                     </a>
                 </li>
             </ul>
@@ -94,7 +94,7 @@
                     <li>
                         <a href="../PHP/logout.php" class="sidebar-link"> <!-- Cambiado aquí -->
                             <i class="lni lni-exit"></i>
-                            <span>Cerrar Sesion</span>
+                            <span>Cerrar Sesión</span>
                         </a>
                     </li>
                     </ul>

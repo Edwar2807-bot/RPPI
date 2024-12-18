@@ -87,7 +87,7 @@
                     <li>
                             <a href="../PHP/logout.php" class="sidebar-link"> <!-- Cambiado aquí -->
                                 <i class="lni lni-exit"></i>
-                                <span>Cerrar Sesion</span>
+                                <span>Cerrar Sesión</span>
                             </a>
                         </li> 
                     </ul>
@@ -158,22 +158,22 @@
                                         <form action="../Controllers/EvaluacionpasanteController_Admin.php" method="POST">
                                             <input type="hidden" name="Id_evaluacion_pasante" value="<?php echo $mostrar['Id_evaluacion_pasante']; ?>">
                                             <div class="mb-3">
-                                                <label for="Proyecto_eval_pasante" class="form-label">Proyecto Evaluacion Pasante</label>
+                                                <label for="Proyecto_eval_pasante" class="form-label">Proyecto Evaluación Pasante</label>
                                                 <input type="text" class="form-control" name="Proyecto_eval_pasante" value="<?php echo $mostrar['Proyecto_eval_pasante']; ?>">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="Horario_eval_pasante" class="form-label">Horario Evaluacion Pasante</label>
+                                                <label for="Horario_eval_pasante" class="form-label">Horario Evaluación Pasante</label>
                                                 <input type="text" class="form-control" name="Horario_eval_pasante" value="<?php echo $mostrar['Horario_eval_pasante']; ?>">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="Reglamento_eval_pasante" class="form-label">Reglamento Evaluacion Pasante</label>
+                                                <label for="Reglamento_eval_pasante" class="form-label">Reglamento Evaluación Pasante</label>
                                                 <input type="text" class="form-control" name="Reglamento_eval_pasante" value="<?php echo $mostrar['Reglamento_eval_pasante']; ?>">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="Concepto_eval_pasante" class="form-label">Concepto evaluacion Pasante</label>
+                                                <label for="Concepto_eval_pasante" class="form-label">Concepto Evaluación Pasante</label>
                                                 <input type="text" class="form-control" name="Concepto_eval_pasante" value="<?php echo $mostrar['Concepto_eval_pasante']; ?>">
                                             </div>
-                                            <button type="submit" name="updateEvaluacionpasante" class="btn btn-primary">Guardar cambios</button>
+                                            <button type="submit" name="updateEvaluacionpasante" class="btn btn-primary">Guardar Cambios</button>
                                         </form>
                                     </div>
                                 </div>
@@ -268,7 +268,7 @@
                                                     <label for="Descripcion_llamado_atencion" class="form-label">Llamado de Atención</label>
                                                     <input type="text" class="form-control" name="Descripcion_llamado_atencion" value="<?php echo $mostrar['Descripcion_llamado_atencion']; ?>">
                                                 </div>
-                                                <button type="submit" name="updateLlamadoatencion" class="btn btn-primary">Guardar cambios</button>
+                                                <button type="submit" name="updateLlamadoatencion" class="btn btn-primary">Guardar Cambios</button>
                                             </form>
                                         </div>
                                     </div>

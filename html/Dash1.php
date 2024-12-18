@@ -96,7 +96,7 @@ if (!isset($_SESSION['Correo'])) {
                     <li>
                         <a href="../PHP/logout.php" class="sidebar-link"> <!-- Cambiado aquí -->
                             <i class="lni lni-exit"></i>
-                            <span>Cerrar Sesion</span>
+                            <span>Cerrar Sesión</span>
                         </a>
                     </li>
                     </ul>

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
-    <title>Formacion | INVIMA</title>
+    <title>Formación | INVIMA</title>
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -48,7 +48,7 @@
                 <li class="sidebar-item">
                     <a href="VFormacion.php" class="sidebar-link">
                         <i class="lni lni-library"></i>
-                        <span>Formacion</span>
+                        <span>Formación</span>
                     </a>
                 </li><br>
                 <li class="sidebar-item">
@@ -73,13 +73,13 @@
         </aside>
         <div class="main">
             <nav class="navbar navbar-expand px-4 py-3"><br>
-                <h3>Formacion</h3><br>
+                <h3>Formación</h3><br>
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav ms-auto">
                     <li>
                         <a href="../PHP/logout.php" class="sidebar-link"> <!-- Cambiado aquí -->
                             <i class="lni lni-exit"></i>
-                            <span>Cerrar Sesion</span>
+                            <span>Cerrar Sesión</span>
                         </a>
                     </li>
                     </ul>
@@ -93,7 +93,7 @@
                         <input type="text" class="form-control" id="searchInput" placeholder="Buscar..." aria-label="Buscar" aria-describedby="search-addon">
                     </div>
 
-                    <button class="btn btn-primary" onclick="location.href='VFormacion1.php'">Agregar Nueva Formacion</button>
+                    <button class="btn btn-primary" onclick="location.href='VFormacion1.php'">Agregar Nueva Formación</button>
                 </div>
                 <!-- Tabla -->
                 <div style="max-height: 400px; overflow-y: auto;">
@@ -101,12 +101,12 @@
                     <thead class="table-dark">
                         <tr>
                             <th>Id</th>
-                            <th>Tipo de educacion</th>
-                            <th>Nivel de educacion</th>
+                            <th>Tipo de educación</th>
+                            <th>Nivel de educación</th>
                             <th>Institucion</th>
                             <th>Programa</th>
-                            <th>Fecha de terminacion</th>
-                            <th>Accion</th>
+                            <th>Fecha de terminación</th>
+                            <th>Acción</th>
                         </tr>
                     </thead>
                     <tbody id="tableBody">
@@ -148,12 +148,12 @@
                                         <form action="../Controllers/FormacionController.php" method="POST">
                                             <input type="hidden" name="Id_formacion" value="<?php echo $mostrar['Id_formacion']; ?>">
                                             <div class="mb-3">
-                                                <label for="Respuesta1" class="form-label">Tipo de educacion</label>
+                                                <label for="Respuesta1" class="form-label">Tipo de educación</label>
                                                 <select id="Tipo_educacion" class="form-control" name="Tipo_educacion" value="<?php echo $mostrar['Tipo_educacion']; ?>">
-                                                    <option value="">Seleccionar Tipo de educacion</option>
-                                                    <option value="Educacion formal">Educacion formal</option>
-                                                    <option value="Educacion no formal">Educacion no formal</option>
-                                                    <option value="Educacion informal">Educacion informal</option>
+                                                    <option value="">Seleccionar Tipo de educación</option>
+                                                    <option value="Educacion formal">Educación formal</option>
+                                                    <option value="Educacion no formal">Educación no formal</option>
+                                                    <option value="Educacion informal">Educación informal</option>
                                                 </select>
                                             </div>
                                             <div class="mb-3">
@@ -169,7 +169,7 @@
                                                 </select>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="Respuesta3" class="form-label">Institucion</label>
+                                                <label for="Respuesta3" class="form-label">Institución</label>
                                                 <input type="Text" class="form-control" id="Institucion" name="Institucion" placeholder="Ingrese el nombre de la Institucion" value="<?php echo $mostrar['Institucion']; ?>">
                                             </div>
                                             <div class="mb-3">
@@ -177,7 +177,7 @@
                                                 <input type="Text" class="form-control" id="Programa" name="Programa" placeholder="Ingrese el nombre del programa" value="<?php echo $mostrar['Programa']; ?>">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="Respuesta5" class="form-label">Fecha de terminacion</label>
+                                                <label for="Respuesta5" class="form-label">Fecha de terminación</label>
                                                 <input type="date" class="form-control" id="Fec_terminacion" name="Fec_terminacion" value="<?php echo $mostrar['Fec_terminacion']; ?>">
                                                 <input type="hidden" name="Id_informacion_personal_form_fk" value="<?php echo $mostrar['Id_informacion_personal_form_fk']; ?>">
                                             </div>

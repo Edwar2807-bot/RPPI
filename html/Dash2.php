@@ -65,7 +65,7 @@ if (!isset($_SESSION['Correo'])) {
                 <li class="sidebar-item">
                     <a href="VFormacion2.php" class="sidebar-link">
                         <i class="lni lni-library"></i>
-                        <span>Formacion</span>
+                        <span>Formación</span>
                     </a>
                 </li><br>
                 <li class="sidebar-item">
@@ -89,7 +89,7 @@ if (!isset($_SESSION['Correo'])) {
                 <li class="sidebar-item">
                     <a href="Vform_pas.php" class="sidebar-link">
                         <i class="lni lni-user"></i>
-                        <span>Formalizacion pasantias</span>
+                        <span>Formalización pasantías</span>
                     </a>
                 </li>
             </ul>
@@ -103,7 +103,7 @@ if (!isset($_SESSION['Correo'])) {
                     <li>
                         <a href="../PHP/logout.php" class="sidebar-link"> <!-- Cambiado aquí -->
                             <i class="lni lni-exit"></i>
-                            <span>Cerrar Sesion</span>
+                            <span>Cerrar Sesión</span>
                         </a>
                     </li>
                     </ul>
@@ -130,7 +130,7 @@ if (!isset($_SESSION['Correo'])) {
                                     <div class="card-body py-4">
                                         <a href="VFormacion2.php" class="div text-decoration-none">
                                             <h5 class=" fw-bold d-flex align-items-center">
-                                                Formacion
+                                                Formación
                                                 <i class="lni lni-library"></i>
                                             </h5>
                                         </a>
@@ -170,7 +170,7 @@ if (!isset($_SESSION['Correo'])) {
                             <a href="VPost_pasant2.php" class="div text-decoration-none">
                                 <h5 class="mb-2 fw-bold f-flex align-items-center">
                                     <i class="lni lni-book"></i>
-                                    Postulacion pasanias
+                                    Postulación pasantías
                                 </h5>
                             </a>
                         </div>

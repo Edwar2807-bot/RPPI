@@ -88,7 +88,7 @@
                         <li>
                             <a href="../PHP/logout.php" class="sidebar-link"> <!-- Cambiado aquí -->
                                 <i class="lni lni-exit"></i>
-                                <span>Cerrar Sesion</span>
+                                <span>Cerrar Sesión</span>
                             </a>
                         </li>                    
                     </ul>
@@ -99,7 +99,7 @@
                     <form action="../Controllers/EstadoproceController_Admin.php" method="POST">
                         <div class="form-row">
                             <label for="Nombre_estado_proc" class="lb1">Nombre Estado</label>
-                            <label for="Descripcion_estado_proc" class="lb2">Descripcion Estado</label>
+                            <label for="Descripcion_estado_proc" class="lb2">Descripción Estado</label>
                         </div>
                         <div class="form-row1">
                         <input type="text" class="form-control1" id="Nombre_estado_proc" name="Nombre_estado_proc" placeholder="Nombre Estado">

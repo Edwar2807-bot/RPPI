@@ -49,7 +49,7 @@
                 <li class="sidebar-item">
                     <a href="VFormacion_tutor.php" class="sidebar-link">
                         <i class="lni lni-library"></i>
-                        <span>Formacion</span>
+                        <span>Formación</span>
                     </a>
                 </li><br>
                 <li class="sidebar-item">
@@ -86,7 +86,7 @@
                     <li>
                         <a href="../PHP/logout.php" class="sidebar-link"> <!-- Cambiado aquí -->
                             <i class="lni lni-exit"></i>
-                            <span>Cerrar Sesion</span>
+                            <span>Cerrar Sesión</span>
                         </a>
                     </li>
                     </ul>
@@ -124,7 +124,7 @@
             <!--Grupo y lugar practicas -->
             <div class="form-row">
                 <label class="lb1" for="Grupo_Solici">Grupo dependencia</label>
-                <label class="lb3" for="Lugar_practica">Lugar de practicas</label>
+                <label class="lb3" for="Lugar_practica">Lugar de prácticas</label>
             </div>
             <div class="form-row1">
                 <select class="form-control1" id="Grupo_Solici" name="Grupo_Solici" required>
@@ -204,7 +204,7 @@
                     <option value="financiero_presupuestal">Grupo Financiero Y Presupuestal</option>
                 </select>
                 <select class="form-control2" id="Lugar_practica" name="Lugar_practica">
-                    <option value="" disabled selected>Seleccione el lugar de pasantias</option>
+                    <option value="" disabled selected>Seleccione el lugar de pasantías</option>
                     <option value="Bogotá - Edificio Conciliación">Bogotá - Edificio Conciliación</option>
                     <option value="Bogotá - Sede CAN">Bogotá - Sede CAN</option>
                     <option value="Bogotá -Sede Montevideo">Bogotá -Sede Montevideo</option>
@@ -223,12 +223,12 @@
 
             <!-- Nivel y programa acdemico  -->
             <div class="form-row">
-                <label class="lb1" for="Nivel_academico">Nivel academico</label>
-                <label class="lb3" for="Programa_academico">Programa academico</label>
+                <label class="lb1" for="Nivel_academico">Nivel académico</label>
+                <label class="lb3" for="Programa_academico">Programa académico</label>
             </div>
             <div class="form-row1">
                 <select  class="form-control1" id="Nivel_academico" name="Nivel_academico">
-                    <option value="" disabled selected>Seleccione el nivel academico</option>
+                    <option value="" disabled selected>Seleccione el nivel académico</option>
                     <option value="Profesional">Profesional</option>
                     <option value="Tecnologo">Tecnologo</option>
                     <option value="Técnico">Técnico</option>
@@ -282,7 +282,7 @@
             <!-- Cargo y descripcion del cargo  -->
             <div class="form-row">
                 <label class="lb1" for="Cargo_solici">Cargo a desempeñar</label>
-                <label class="lb3" for="Descrip_cargo">Descripcion del cargo</label>
+                <label class="lb3" for="Descrip_cargo">Descripción del cargo</label>
             </div>
             <div class="form-row1">
                 <input type="text" class="form-control1" id="Cargo_solici" name="Cargo_solici" placeholder="Digite el cargo a desempeñar" required>

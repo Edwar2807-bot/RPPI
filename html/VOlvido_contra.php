@@ -36,7 +36,7 @@
                 <div class="form-login">
                     <form>
                         <div class="form-group">
-                            <label for="email">Direccion de correo electronico</label>
+                            <label for="email">Dirección de correo electrónico</label>
                             <input type="email" class="form-control" id="email" placeholder="Direccion de correo electronico" required>
                         </div>
                         <button type="submit" class="btn-sesion">Enviar reinicio de contraseña al correo</button>

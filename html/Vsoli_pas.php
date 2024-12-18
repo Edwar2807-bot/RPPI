@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
-    <title>Solicitud pasantias | INVIMA</title>
+    <title>Solicitud pasantías | INVIMA</title>
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -49,7 +49,7 @@
                 <li class="sidebar-item">
                     <a href="VFormacion_Th.php" class="sidebar-link">
                         <i class="lni lni-library"></i>
-                        <span>Formacion</span>
+                        <span>Formación</span>
                     </a>
                 </li><br>
                 <li class="sidebar-item">
@@ -73,20 +73,20 @@
                 <li class="sidebar-item">
                     <a href="VForm_pas_th.php" class="sidebar-link">
                         <i class="lni lni-user"></i>
-                        <span>Formalizacion  pasanias</span>
+                        <span>Formalización  pasantías</span>
                     </a>
                 </li>
             </ul>
         </aside>
         <div class="main">
             <nav class="navbar navbar-expand px-4 py-3"><br>
-                <h3>Solicitud pasantias</h3><br>
+                <h3>Solicitud pasantías</h3><br>
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav ms-auto">
                     <li>
                         <a href="../PHP/logout.php" class="sidebar-link"> <!-- Cambiado aquí -->
                             <i class="lni lni-exit"></i>
-                            <span>Cerrar Sesion</span>
+                            <span>Cerrar Sesión</span>
                         </a>
                     </li>
                     </ul>
@@ -99,7 +99,7 @@
                         <span class="input-group-text" id="search-addon"><i class="lni lni-search"></i></span>
                         <input type="text" class="form-control" id="searchInput" placeholder="Buscar..." aria-label="Buscar" aria-describedby="search-addon">
                     </div>
-                    <button class="btn btn-primary" onclick="location.href='Vresp_soli.php'">Agregar Nueva postulacion</button>
+                    <button class="btn btn-primary" onclick="location.href='Vresp_soli.php'">Agregar Nueva postulación</button>
                 </div>
                 <div style="max-height: 400px; overflow-y: auto;">
                 <table class="table table-bordered table-hover">
@@ -107,16 +107,16 @@
                             <tr>
                                 <th>Id</th>
                                 <th>Entidad</th>
-                                <th>Programa de pasantias</th>
+                                <th>Programa de pasantías</th>
                                 <th>Medio enterado</th>
-                                <th>Area pasantias</th>
+                                <th>Área pasantías</th>
                                 <th>Hoja de vida</th>
-                                <th>Carta de presentacion</th>
+                                <th>Carta de presentación</th>
                                 <th>Documento identidad</th>
-                                <th>Duracion</th>
+                                <th>Duración</th>
                                 <th>Fecha inicio</th>
                                 <th>Aceptado</th>
-                                <th>Accion</th>
+                                <th>Acción</th>
                             </tr>
                         </thead>
                         <tbody id="tableBody">
@@ -140,7 +140,7 @@
                                 <th><?php echo $mostrar['Medio_ent']; ?></th>
                                 <th><?php echo $mostrar['Area_pas']; ?></th>
                                 <th><a href="<?php echo $mostrar['Hoja_vida']; ?>"> Hoja de vida</a></th>
-                                <th><a href="<?php echo $mostrar['Carta_presentacion']; ?>"> Carta de presentacion</a></th>
+                                <th><a href="<?php echo $mostrar['Carta_presentacion']; ?>"> Carta de presentación</a></th>
                                 <th><a href="<?php echo $mostrar['Documento_id']; ?>"> Documento </a></th>
                                 <th><?php echo $mostrar['Duracion']; ?></th>
                                 <th><?php echo $mostrar['Fec_ini_pas']; ?></th>
@@ -156,7 +156,7 @@
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="updateModalLabel">Responder Postulacion</h5>
+                                            <h5 class="modal-title" id="updateModalLabel">Responder Postulación</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">                                        
@@ -171,13 +171,13 @@
                                                     <input type="text" class="form-control" id="Programa_pasantias" name="Programa_pasantias"  value="<?php echo $mostrar['Programa_pasantias']; ?>" readonly>
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label class="lb1" for="Medio_ent">Medio por el cual se entero</label>
+                                                    <label class="lb1" for="Medio_ent">Medio por el cual se enteró</label>
                                                     <input type="text" class="form-control" id="Medio_ent" name="Medio_ent" value="<?php echo $mostrar['Medio_ent']; ?>" readonly>
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label class="lb3" for="Area_pas">Area de pasantias</label>
+                                                    <label class="lb3" for="Area_pas">Área de pasantías</label>
                                                     <select id="Area_pas" class="form-control" name="Area_pas" value="<?php echo $mostrar['Area_pas']; ?>" required>
-                                                        <option value="">Seleccionar Area</option>
+                                                        <option value="">Seleccionar Área</option>
                                                         <option value="Oficina de tecnologias">Oficina de tecnologias</option>
                                                         <option value="Soporte">Soporte</option>
                                                         <option value="Contractual">Contractual</option>
@@ -188,7 +188,7 @@
                                                     <input type="text" class="form-control" id="Hoja_vida" name="Hoja_vida"  value="<?php echo $mostrar['Hoja_vida']; ?>" readonly>
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label class="lb2" for="Carta_presentacion">Carta de presentacion</label>
+                                                    <label class="lb2" for="Carta_presentacion">Carta de presentación</label>
                                                     <input type="text" class="form-control" id="Carta_presentacion" name="Carta_presentacion" value="<?php echo $mostrar['Carta_presentacion']; ?>" readonly>
                                                 </div>
                                                 <div class="mb-3">
@@ -196,16 +196,16 @@
                                                     <input type="text" class="form-control" id="Documento_id" name="Documento_id" value="<?php echo $mostrar['Documento_id']; ?>" readonly>
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label class="lb4" for="Duracion">Duracion de las pasantias</label>
+                                                    <label class="lb4" for="Duracion">Duración de las pasantías</label>
                                                     <input type="text" class="form-control" id="Duracion" name="Duracion" value="<?php echo $mostrar['Duracion']; ?>" readonly>             
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label class="lb1" for="Fec_ini_pas">Fecha de inicio pasantias</label>
+                                                    <label class="lb1" for="Fec_ini_pas">Fecha de inicio pasantías</label>
                                                     <input type="date" class="form-control" id="Fec_ini_pas" name="Fec_ini_pas" value="<?php echo $mostrar['Fec_ini_pas']; ?>" readonly>
                                                     <input type="hidden" name="Estado_procedimiento_post_fk" value="<?php echo $mostrar['Estado_procedimiento_post_fk']; ?>">
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label class="lb1" for="Aceptado">Aceptacion de postulacion</label>
+                                                    <label class="lb1" for="Aceptado">Aceptación de postulación</label>
                                                     <select id="Aceptado" class="form-control" name="Aceptado" value="<?php echo $mostrar['Aceptado']; ?>" required>
                                                         <option value="Si"> si</option>
                                                         <option value="No"> No</option>
@@ -227,7 +227,7 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            ¿Estás seguro de que deseas eliminar esta postulacion?
+                                            ¿Estás seguro de que deseas eliminar esta postulación?
                                         </div>
                                         <div class="modal-footer">
                                             <!-- Botón para cerrar el modal sin eliminar -->

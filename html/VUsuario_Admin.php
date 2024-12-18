@@ -88,7 +88,7 @@
                     <li>
                         <a href="../PHP/logout.php" class="sidebar-link"> <!-- Cambiado aquí -->
                             <i class="lni lni-exit"></i>
-                            <span>Cerrar Sesion</span>
+                            <span>Cerrar Sesión</span>
                         </a>
                     </li>
                     </ul>
@@ -115,8 +115,8 @@
                             <th>Contraseña</th>
                             <th>Rol</th>
                             <th>Estado</th>
-                            <th>Accion</th>
-                            <th>Accion</th>
+                            <th>Acción</th>
+                            <th>Acción</th>
                         </tr>
                     </thead>
                     <tbody id="tableBody">

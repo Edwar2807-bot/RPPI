@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
-    <title>Formacion | INVIMA</title>
+    <title>Formación | INVIMA</title>
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -48,7 +48,7 @@
                 <li class="sidebar-item">
                     <a href="VFormacion3.php" class="sidebar-link">
                         <i class="lni lni-library"></i>
-                        <span>Formacion</span>
+                        <span>Formación</span>
                     </a>
                 </li><br>
                 <li class="sidebar-item">
@@ -72,26 +72,26 @@
                 <li class="sidebar-item">
                     <a href="Vpro_pas.php" class="sidebar-link">
                         <i class="lni lni-pencil-alt"></i>
-                        <span>proyecto de pasantias</span>
+                        <span>proyecto de pasantías</span>
                     </a>
                 </li><br>
                 <li class="sidebar-item">
                     <a href="VEval_tut_tabla.php" class="sidebar-link">
                         <i class="lni lni-notepad"></i>
-                        <span>Evaluacion tutor</span>
+                        <span>Evaluación tutor</span>
                     </a>
                 </li>
             </ul>
         </aside>
         <div class="main">
             <nav class="navbar navbar-expand px-4 py-3"><br>
-                <h3>Formacion</h3><br>
+                <h3>Formación</h3><br>
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav ms-auto">
                     <li>
                         <a href="../PHP/logout.php" class="sidebar-link"> <!-- Cambiado aquí -->
                             <i class="lni lni-exit"></i>
-                            <span>Cerrar Sesion</span>
+                            <span>Cerrar Sesión</span>
                         </a>
                     </li>
                     </ul>
@@ -101,15 +101,15 @@
                 <div class="form-login">
                     <form action="../Controllers/FormacionController3.php" method="POST">
                         <div class="form-row">
-                            <label class="lb1" for="Tipo_educacion">Tipo de educacion </label>
-                            <label class="lb2" for="Nivel_educacion">Nivel de educacion</label>
+                            <label class="lb1" for="Tipo_educacion">Tipo de educación </label>
+                            <label class="lb2" for="Nivel_educacion">Nivel de educación</label>
                         </div>
                         <div class="form-row1">
                             <select id="Tipo_educacion" class="form-control1" name="Tipo_educacion" required>
-                                <option value="">Seleccionar Tipo de educacion</option>
-                                <option value="Educacion formal">Educacion formal</option>
-                                <option value="Educacion no formal">Educacion no formal</option>
-                                <option value="Educacion informal">Educacion informal</option>
+                                <option value="">Seleccionar Tipo de educación</option>
+                                <option value="Educacion formal">Educación formal</option>
+                                <option value="Educacion no formal">Educación no formal</option>
+                                <option value="Educacion informal">Educación informal</option>
                             </select>
                             <select id="Nivel_educacion" class="form-control2" name="Nivel_educacion" required>
                                 <option value="">Seleccionar Nivel educativo</option>
@@ -122,7 +122,7 @@
                             </select>
                         </div>
                         <div class="form-row">
-                            <label class="lb1" for="Institucion">Institucion</label>
+                            <label class="lb1" for="Institucion">Institución</label>
                             <label class="lb3" for="Programa">Programa</label>
                         </div>
                         <div class="form-row1">
@@ -130,7 +130,7 @@
                             <input type="Text" class="form-control2" id="Programa" name="Programa" placeholder="Ingrese el nombre del programa"  required>
                         </div>
                         <div class="form-row">
-                            <label class="lb1" for="Fec_terminacion">Fecha de terminacion</label>
+                            <label class="lb1" for="Fec_terminacion">Fecha de terminación</label>
                         </div>
                         <div class="form-row1">
                             <input type="date" class="form-control1" id="Fec_terminacion" name="Fec_terminacion"  required>

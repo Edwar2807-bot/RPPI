@@ -49,7 +49,7 @@
                 <li class="sidebar-item">
                     <a href="VFormacion.php" class="sidebar-link">
                         <i class="lni lni-library"></i>
-                        <span>Formacion</span>
+                        <span>Formación</span>
                     </a>
                 </li><br>
                 <li class="sidebar-item">
@@ -81,7 +81,7 @@
                     <li>
                         <a href="../PHP/logout.php" class="sidebar-link"> <!-- Cambiado aquí -->
                             <i class="lni lni-exit"></i>
-                            <span>Cerrar Sesion</span>
+                            <span>Cerrar Sesión</span>
                         </a>
                     </li>                    </ul>
                 </div>
@@ -99,7 +99,7 @@
                         </div>
                         <div class="form-row">
                             <label class="lb1" for="Fec_ini">Fecha de ingreso</label>
-                            <label class="lb3" for="Fec_fin">Fecha de terminacion</label>
+                            <label class="lb3" for="Fec_fin">Fecha de terminación</label>
                         </div>
                         <div class="form-row1">
                             <input type="date" class="form-control1" id="Fechai" name="Fec_ini" required>
@@ -107,7 +107,7 @@
                         </div>
                         <div class="form-row">
                             <label class="lb1" for="Emp_actual">¿Empleo actual?</label>
-                            <label class="lb4" for="Horario">Horiario laboral</label>
+                            <label class="lb4" for="Horario">Horario laboral</label>
                         </div>
                         <div class="form-row1">
                             <select id="Eactual" class="form-control1" name="Emp_actual" required>

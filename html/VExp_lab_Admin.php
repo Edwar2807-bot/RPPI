@@ -88,7 +88,7 @@
                     <li>
                         <a href="../PHP/logout.php" class="sidebar-link"> <!-- Cambiado aquí -->
                             <i class="lni lni-exit"></i>
-                            <span>Cerrar Sesion</span>
+                            <span>Cerrar Sesión</span>
                         </a>
                     </li>
                     </ul>
@@ -115,8 +115,8 @@
                             <th>Fecha de salida</th>
                             <th>¿Empleo actual?</th>
                             <th>Horario</th>
-                            <th>Accion</th>
-                            <th>Accion</th>
+                            <th>Acción</th>
+                            <th>Acción</th>
                         </tr>
                     </thead>
                     <tbody id="tableBody">
@@ -175,7 +175,7 @@
                                                 <input type="date" class="form-control" id="Fechai" name="Fec_ini" value="<?php echo $mostrar['Fec_ini']; ?>">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="Respuesta4" class="form-label">Fecha de terminacion</label>
+                                                <label for="Respuesta4" class="form-label">Fecha de terminación</label>
                                                 <input type="date" class="form-control" id="Fechat" name="Fec_fin" value="<?php echo $mostrar['Fec_fin']; ?>">
                                             </div>
                                             <div class="mb-3">
@@ -187,7 +187,7 @@
                                                 </select>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="Respuesta4" class="form-label">Horiario laboral</label>
+                                                <label for="Respuesta4" class="form-label">Horario laboral</label>
                                                 <select id="Hlab" class="form-control" name="Horario" value="<?php echo $mostrar['Horario']; ?>">
                                                     <option value="1">Seleccionar el horario</option>
                                                     <option value="Diurno">Diurno</option>

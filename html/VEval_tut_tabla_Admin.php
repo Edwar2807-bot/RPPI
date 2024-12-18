@@ -86,7 +86,7 @@
                     <li>
                         <a href="../PHP/logout.php" class="sidebar-link"> <!-- Cambiado aquí -->
                             <i class="lni lni-exit"></i>
-                            <span>Cerrar Sesion</span>
+                            <span>Cerrar Sesión</span>
                         </a>
                     </li>
                     </ul>
@@ -192,7 +192,7 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        ¿Estás seguro de que deseas eliminar esta Evaluacion?
+                                        ¿Estás seguro de que deseas eliminar esta Evaluación?
                                     </div>
                                     <div class="modal-footer">
                                         <!-- Botón para cerrar el modal sin eliminar -->

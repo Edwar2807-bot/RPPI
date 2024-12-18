@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
-    <title>Informaicion laboral | INVIMA</title>
+    <title>Información laboral | INVIMA</title>
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -50,7 +50,7 @@
                 <li class="sidebar-item">
                     <a href="VFormacion.php" class="sidebar-link">
                         <i class="lni lni-library"></i>
-                        <span>Formacion</span>
+                        <span>Formación</span>
                     </a>
                 </li><br>
                 <li class="sidebar-item">
@@ -75,14 +75,14 @@
         </aside>
         <div class="main">
             <nav class="navbar navbar-expand px-4 py-3"><br>
-                <h3>Informacion Laboral</h3><br>
+                <h3>Información Laboral</h3><br>
 
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav ms-auto">
                     <li>
                         <a href="../PHP/logout.php" class="sidebar-link"> <!-- Cambiado aquí -->
                             <i class="lni lni-exit"></i>
-                            <span>Cerrar Sesion</span>
+                            <span>Cerrar Sesión</span>
                         </a>
                     </li>
                     </ul>
@@ -104,20 +104,20 @@
                 <tr>
                     <th>Id</th>
                     <th>Numero documento</th>
-                    <th>Tipo indentificacion</th>
+                    <th>Tipo indentificación</th>
                     <th>Fecha de nacimiento</th>
                     <th>Nombre</th>
                     <th>Apellido</th>
                     <th>Correo</th>
-                    <th>Telefono</th>
-                    <th>Direccion</th>
-                    <th>Fecha expedicion</th>
+                    <th>Teléfono</th>
+                    <th>Dirección</th>
+                    <th>Fecha expedición</th>
                     <th>Ciudad</th>
                     <th>Estrato</th>
-                    <th>Genero</th>
+                    <th>Género</th>
                     <th>Nivel educativo</th>
                     <th>Foto</th>
-                    <th>Accion</th>
+                    <th>Acción</th>
                 </tr>
             </thead>
             <tbody id="tableBody">
