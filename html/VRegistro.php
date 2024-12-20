@@ -63,7 +63,7 @@
                         </div>
                         <div class="form-group">
                             <input type="checkbox" id="remember-me" required>
-                            <label for="remember-me">Estoy de acuerdo con los términos y condiciones</label>
+                            <a href="https://app.invima.gov.co/oficina-virtual/infoac/politicas" target="_blank" style="color: black;" >Estoy de acuerdo con los términos y condiciones</a>
                         </div>
                         <button type="submit" class="btn-sesion">Registrarse</button>
                         <br><br>
