@@ -1,3 +1,9 @@
+<?php
+session_start(); // Esto debe ser lo primero en el archivo
+require_once('../PHP/VerificacionAcceso.php');
+verificarAcceso();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -101,11 +107,13 @@
                     </div>
                     <button class="btn btn-primary" onclick="location.href='Vresp_soli.php'">Agregar Nueva postulación</button>
                 </div>
-                <div style="max-height: 400px; overflow-y: auto;">
-                <table class="table table-bordered table-hover">
-                        <thead class="table-dark">
+                <div style="max-height: 1000px; overflow-y: auto; ">
+                    <table class="table table-bordered table-hover">
+
+                    <thead class="table-dark">
                             <tr>
-                                <th>Id</th>
+                                <th >Id Usuario</th>
+                                <th>Id Pasantía</th>
                                 <th>Entidad</th>
                                 <th>Programa de pasantías</th>
                                 <th>Medio enterado</th>
@@ -116,14 +124,17 @@
                                 <th>Duración</th>
                                 <th>Fecha inicio</th>
                                 <th>Aceptado</th>
+                                <th>Observaciones</th>
                                 <th>Acción</th>
                             </tr>
                         </thead>
+
+
                         <tbody id="tableBody">
                         <?php
                             try {
                                 // Conexión con PDO a SQL Server
-                                $co = new PDO("sqlsrv:server=SRVVSANDIEGO\\SRVDESARROLLO;Database=ADMINISTRATIVA", "klozanoq", "Colombia2023*");
+                                $co = new PDO("sqlsrv:server=DESKTOP-6VHCU6I;database=RPPI");
                                 $co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                                 
                                 // Consulta a la base de datos
@@ -134,6 +145,7 @@
                                 while($mostrar = $stmt->fetch(PDO::FETCH_ASSOC)) {
                             ?>
                             <tr>
+                                <th><?php echo $mostrar['Id_Usuario']; ?></th>
                                 <th><?php echo $mostrar['Id_post_pasantia']; ?></th>
                                 <th><?php echo $mostrar['Entidad']; ?></th>
                                 <th><?php echo $mostrar['Programa_pasantias']; ?></th>
@@ -145,6 +157,7 @@
                                 <th><?php echo $mostrar['Duracion']; ?></th>
                                 <th><?php echo $mostrar['Fec_ini_pas']; ?></th>
                                 <th><?php echo $mostrar['Aceptado']; ?></th>
+                                <th><?php echo $mostrar['Observaciones']; ?></th>
                                 <!-- Botón Responder -->
                                 <td>
                                 <button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#updateModal<?php echo $mostrar['Id_post_pasantia']; ?>">Responder</button>
@@ -163,45 +176,41 @@
                                             <form action="../Controllers/PostulacionpasController_Th.php" method="POST">
                                                 <input type="hidden" name="Id_post_pasantia" value="<?php echo $mostrar['Id_post_pasantia']; ?>">
                                                 <div class="mb-3">
-                                                    <label class="lb1" for="Entidad">Entidad de la que proviene </label>
-                                                    <input type="text" class="form-control" id="Entidad" name="Entidad" value="<?php echo $mostrar['Entidad']; ?>" readonly>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label class="lb2" for="Programa_pasantias">Programa que estudio</label>
-                                                    <input type="text" class="form-control" id="Programa_pasantias" name="Programa_pasantias"  value="<?php echo $mostrar['Programa_pasantias']; ?>" readonly>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label class="lb1" for="Medio_ent">Medio por el cual se enteró</label>
-                                                    <input type="text" class="form-control" id="Medio_ent" name="Medio_ent" value="<?php echo $mostrar['Medio_ent']; ?>" readonly>
-                                                </div>
-                                                <div class="mb-3">
                                                     <label class="lb3" for="Area_pas">Área de pasantías</label>
                                                     <select id="Area_pas" class="form-control" name="Area_pas" value="<?php echo $mostrar['Area_pas']; ?>" required>
-                                                        <option value="">Seleccionar Área</option>
-                                                        <option value="Oficina de tecnologias">Oficina de tecnologias</option>
-                                                        <option value="Soporte">Soporte</option>
-                                                        <option value="Contractual">Contractual</option>
+                                                        <option value="<?php echo $mostrar['Area_pas'];?>"><?php echo $mostrar['Area_pas']; ?></option>
+                                                        <option value="Dirección de Alimentos y Bebidas">Dirección de Alimentos y Bebidas</option>
+                                                        <option value="Dirección de Cosméticos y plaguicidas">Dirección de Cosméticos y plaguicidas</option>
+                                                        <option value="Dirección de Dispositivos Médicos">Dirección de Dispositivos Médicos</option>
+                                                        <option value="Dirección de Medicamentos y Productos Biológicos">Dirección de Medicamentos y Productos Biológicos</option>
+                                                        <option value="Dirección de Operaciones Sanitarias">Dirección de Operaciones Sanitarias</option>
+                                                        <option value="Dirección de Responsabilidad Sanitaria">Dirección de Responsabilidad Sanitaria</option>
+                                                        <option value="Dirección General">Dirección General</option>
+                                                        <option value="Oficina Asesora de Planeación">Oficina Asesora de Planeación</option>
+                                                        <option value="Oficina Asesora Jurídica">Oficina Asesora Jurídica</option>
+                                                        <option value="Oficina de Asuntos Internacionales">Oficina de Asuntos Internacionales</option>
+                                                        <option value="Oficina de Atención al Ciudadano">Oficina de Atención al Ciudadano</option>
+                                                        <option value="Oficina de Control Interno">Oficina de Control Interno</option>
+                                                        <option value="Oficina de Laboratorios y Control de Calidad">Oficina de Laboratorios y Control de Calidad</option>
+                                                        <option value="Oficina de Tecnologías de la Información">Oficina de Tecnologías de la Información</option>
+                                                        <option value="Secretaría General">Secretaría General</option>';
                                                     </select>               
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label class="lb1" for="Hoja_vida">Hoja de vida</label>
-                                                    <input type="text" class="form-control" id="Hoja_vida" name="Hoja_vida"  value="<?php echo $mostrar['Hoja_vida']; ?>" readonly>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label class="lb2" for="Carta_presentacion">Carta de presentación</label>
-                                                    <input type="text" class="form-control" id="Carta_presentacion" name="Carta_presentacion" value="<?php echo $mostrar['Carta_presentacion']; ?>" readonly>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label class="lb1" for="Documento_id">Documento de indentidad</label>
-                                                    <input type="text" class="form-control" id="Documento_id" name="Documento_id" value="<?php echo $mostrar['Documento_id']; ?>" readonly>
-                                                </div>
-                                                <div class="mb-3">
                                                     <label class="lb4" for="Duracion">Duración de las pasantías</label>
-                                                    <input type="text" class="form-control" id="Duracion" name="Duracion" value="<?php echo $mostrar['Duracion']; ?>" readonly>             
+                                                    <select id="Duracion" class="form-control2" name="Duracion" value="<?php echo $mostrar['Duracion']; ?>">
+                                                        <option value="<?php echo $mostrar['Duracion']; ?>"><?php echo $mostrar['Duracion']; ?></option>
+                                                        <option value="3 Meses">3 Meses</option>
+                                                        <option value="3 Meses">4 Meses</option>
+                                                        <option value="3 Meses">5 Meses</option>
+                                                        <option value="6 Meses">6 Meses</option>
+                                                        <option value="9 Meses">9 Meses</option>
+                                                        <option value="12 Meses">12 Meses</option>
+                                                    </select>             
                                                 </div>
                                                 <div class="mb-3">
                                                     <label class="lb1" for="Fec_ini_pas">Fecha de inicio pasantías</label>
-                                                    <input type="date" class="form-control" id="Fec_ini_pas" name="Fec_ini_pas" value="<?php echo $mostrar['Fec_ini_pas']; ?>" readonly>
+                                                    <input type="date" class="form-control" id="Fec_ini_pas" name="Fec_ini_pas" value="<?php echo $mostrar['Fec_ini_pas']; ?>">
                                                     <input type="hidden" name="Estado_procedimiento_post_fk" value="<?php echo $mostrar['Estado_procedimiento_post_fk']; ?>">
                                                 </div>
                                                 <div class="mb-3">
@@ -209,10 +218,15 @@
                                                     <select id="Aceptado" class="form-control" name="Aceptado" value="<?php echo $mostrar['Aceptado']; ?>" required>
                                                         <option value="Si"> si</option>
                                                         <option value="No"> No</option>
+                                                        <option value="No"> Corregir Datos</option>
                                                     </select>                                                         
                                                     <input type="hidden" name="Estado_procedimiento_post_fk" value="<?php echo $mostrar['Estado_procedimiento_post_fk']; ?>">
                                                 </div>
-                                                <button type="submit" name="updatePostulacionpasantias" class="btn btn-primary">Guardar cambios</button>
+                                                <div class="mb-3">
+                                                    <label class="lb1" for="Observaciones">Observaciones</label>
+                                                    <textarea id="Observaciones" class="form-control" name="Observaciones" rows="4" value="<?php echo $mostrar['Observaciones']; ?>" required><?php echo $mostrar['Observaciones']; ?></textarea>
+                                                </div>
+                                                <button type="submit" name="updatePostulacionpasantiasTh" class="btn btn-primary">Enviar Respuesta</button>
                                             </form>
                                         </div>
                                     </div>
@@ -254,7 +268,11 @@
             </main>
         </div>
     </div><br>
+    <br><br><br>
+
+    <br><br><br>    
     <footer>
+        <br> 
         <div class="container container-footer mb-5 px-4 py-5" id="principal-section-footer">
             <div class="region region-footer">
                 <div class="d-block">

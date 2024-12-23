@@ -1,5 +1,7 @@
 <?php
-session_start();
+session_start(); // Esto debe ser lo primero en el archivo
+require_once('../PHP/VerificacionAcceso.php');
+verificarAcceso();
 
 // Desactivar la caché
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
@@ -89,6 +91,13 @@ if (!isset($_SESSION['Correo'])) {
             </ul>
         </aside>
         <div class="main">
+                <div class="mx-auto text-center">
+                    <h4 class="mb-0">
+                        <?php 
+                            echo '<span style="font-weight: bold;">Tutor</span>';
+                        ?>
+                    </h4>
+                </div>
             <nav class="navbar navbar-expand px-4 py-3">
                 <form action="#" class="d-none d-sm-inline-block">
                 </form>
@@ -148,7 +157,7 @@ if (!isset($_SESSION['Correo'])) {
                                     <div class="card-body py-4">
                                         <a href="VDocs_tutor.php" class="div text-decoration-none">
                                             <h5 class="fw-bold d-flex align-items-center">
-                                                Documentos
+                                                Otros Documentos
                                                 <i class="lni lni-files"></i>
                                             </h5>
                                         </a>
@@ -197,7 +206,9 @@ if (!isset($_SESSION['Correo'])) {
             </main>
         </div>
     </div>
+    <br><br><br>    
     <footer>
+        <br> 
         <div class="container container-footer mb-5 px-4 py-5" id="principal-section-footer">
             <div class="region region-footer">
                 <div class="d-block">

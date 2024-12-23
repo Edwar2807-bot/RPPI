@@ -1,4 +1,5 @@
 <?php
+session_start(); 
 class ExperiencialaboralController
 {
     private $model;
@@ -9,7 +10,7 @@ class ExperiencialaboralController
         $this->model = new ExperiencialaboralModel();
     }
 
-    public function setExperiencialaboral($Empresa, $Cargo, $Fec_ini, $Fec_fin, $Emp_actual, $Horario, $Id_informacion_personal_exp_fk = 1) // Valor predeterminado
+    public function setExperiencialaboral($Empresa, $Cargo, $Fec_ini, $Fec_fin, $Emp_actual, $Horario, $Id_informacion_personal_exp_fk = 1, $Id_Usuario) // Valor predeterminado
     {
         if (empty($Empresa) || empty($Cargo) || empty($Fec_ini) || empty($Fec_fin) || empty($Emp_actual) || empty($Horario)) {
             echo '
@@ -20,10 +21,10 @@ class ExperiencialaboralController
             exit;
         } else {
             // Asegúrate de que se pasa Num_documento_exp_fk (ya tiene valor predeterminado)
-            $this->model->setExperiencialaboral($Empresa, $Cargo, $Fec_ini, $Fec_fin, $Emp_actual, $Horario, $Id_informacion_personal_exp_fk);
+            $this->model->setExperiencialaboral($Empresa, $Cargo, $Fec_ini, $Fec_fin, $Emp_actual, $Horario, $Id_informacion_personal_exp_fk, $Id_Usuario);
             echo '
             <script>alert("Experiencia laboral registrada correctamente");
-            window.location = "../html/VExp_lab1.php";
+            window.location = "../html/VExp_lab.php";
             </script>
             ';
         }
@@ -84,6 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['setExperiencialaboral'])) {
+        $Id_Usuario = $_SESSION['Usuario_id'];
         $Id_informacion_personal_exp_fk = !empty($_POST['Id_informacion_personal_exp_fk']) ? $_POST['Id_informacion_personal_exp_fk'] : 6; // Valor predeterminado si no se proporciona
         $ExperiencialaboralController->setExperiencialaboral(
             $_POST['Empresa'],
@@ -92,7 +94,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST['Fec_fin'],
             $_POST['Emp_actual'],
             $_POST['Horario'],
-            $Id_informacion_personal_exp_fk // Pasa el valor correspondiente
+            $Id_informacion_personal_exp_fk, // Pasa el valor correspondiente
+            $Id_Usuario
         );
         exit;
     }

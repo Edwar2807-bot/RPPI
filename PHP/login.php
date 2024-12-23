@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 // Consulta para obtener el usuario y su rol
-$stmt = $conn->prepare("SELECT u.Correo, u.Pass, r.Id_rol FROM RPPI.Usuario u
+$stmt = $conn->prepare("SELECT u.Correo, u.Pass, r.Id_rol, u.Id_usuario FROM RPPI.Usuario u
                         JOIN RPPI.RolUsuario r ON u.Id_rol_fk = r.Id_rol 
                         WHERE u.Correo = :email");
 $stmt->execute(['email' => $email]);
@@ -45,7 +45,9 @@ if ($row) {
         // Iniciar sesión y guardar los datos necesarios
         $_SESSION['Correo'] = $row['Correo'];
         $_SESSION['rol_id'] = $row['Id_rol']; // Guardar el ID del rol en la sesión
+        $_SESSION['Usuario_id'] = $row['Id_usuario'];
 
+        
         // Redirigir según el ID del rol del usuario
         switch ($row['Id_rol']) {
             case 1: // ID del rol para Admin

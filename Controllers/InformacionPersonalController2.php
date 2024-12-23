@@ -1,5 +1,5 @@
 <?php
-
+session_start(); 
 class InformacionPersonalController  
 {
     private $model;
@@ -26,7 +26,7 @@ class InformacionPersonalController
         return $stmt->fetch();
     }
 
-    public function setInformacionPersonal($Num_documento, $Tipo_identificacion, $Fec_nacimiento, $Nombre, $Apellido, $Correo, $Telefono, $Direccion, $Fec_expedicion, $Ciudad, $Estrato, $Genero, $Nivel_educativo, $Foto, $Id_usuario_persona_fk = 1, $Id_post_pasantias_fk = 8)
+    public function setInformacionPersonal($Num_documento, $Tipo_identificacion, $Fec_nacimiento, $Nombre, $Apellido, $Correo, $Telefono, $Direccion, $Fec_expedicion, $Ciudad, $Estrato, $Genero, $Nivel_educativo, $Foto, $Id_usuario_persona_fk, $Id_post_pasantias_fk)
     {
         // Validar campos vacíos (incluyendo Foto)
         if (empty($Num_documento) || empty($Tipo_identificacion) || empty($Fec_nacimiento) || empty($Nombre) || empty($Apellido) || empty($Correo) || empty($Telefono) || empty($Direccion) || empty($Fec_expedicion) || empty($Ciudad) || empty($Estrato) || empty($Genero) || empty($Nivel_educativo) || empty($Foto)) {
@@ -137,8 +137,8 @@ $InformacionPersonalController = new InformacionPersonalController();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['setInformacionPersonal'])) {
-        $Id_usuario_persona_fk = !empty($_POST['Id_usuario_persona_fk']) ? $_POST['Id_usuario_persona_fk'] : 1;
-        $Id_post_pasantias_fk = !empty($_POST['Id_post_pasantias_fk']) ? $_POST['Id_post_pasantias_fk'] : 8;
+        $Id_usuario_persona_fk = $_SESSION['Usuario_id'];
+        $Id_post_pasantias_fk = !empty($_POST['Id_post_pasantias_fk']) ? $_POST['Id_post_pasantias_fk'] : 2;
 
         // Verifica si se ha enviado la foto
         if (!isset($_FILES['Foto']) || $_FILES['Foto']['error'] != UPLOAD_ERR_OK) {
@@ -155,8 +155,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit;
     }
     if (isset($_POST['updateInformacionPersonal'])) {
-        $Id_usuario_persona_fk = !empty($_POST['Id_usuario_persona_fk']) ? $_POST['Id_usuario_persona_fk'] : 1; // Valor predeterminado si no se proporciona
-        $Id_post_pasantias_fk = !empty($_POST['Id_post_pasantias_fk']) ? $_POST['Id_post_pasantias_fk'] : 8; // Valor predeterminado si no se proporciona
+        $Id_usuario_persona_fk = $_SESSION['Usuario_id']; // Valor predeterminado si no se proporciona
+        $Id_post_pasantias_fk = !empty($_POST['Id_post_pasantias_fk']) ? $_POST['Id_post_pasantias_fk'] : 2; // Valor predeterminado si no se proporciona
         $InformacionPersonalController->updateInformacionPersonal($_POST['Id_informacion_personal'], $_POST['Num_documento'], $_POST['Tipo_identificacion'], $_POST['Fec_nacimiento'], $_POST['Nombre'], $_POST['Apellido'], $_POST['Correo'], $_POST['Telefono'], $_POST['Direccion'], $_POST['Fec_expedicion'], $_POST['Ciudad'], $_POST['Estrato'], $_POST['Genero'], $_POST['Nivel_educativo'], $Id_usuario_persona_fk, $Id_post_pasantias_fk);
         exit;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
     }

@@ -1,3 +1,9 @@
+<?php
+session_start(); // Esto debe ser lo primero en el archivo
+require_once('../PHP/VerificacionAcceso.php');
+verificarAcceso();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -6,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
-    <title>Información laboral | INVIMA</title>
+    <title>Información Personal | INVIMA</title>
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -81,7 +87,7 @@
         </aside>
         <div class="main">
             <nav class="navbar navbar-expand px-4 py-3"><br>
-                <h3>Información Laboral</h3><br>
+                <h3>Información Personal</h3><br>
 
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav ms-auto">
@@ -104,12 +110,12 @@
                     <button class="btn btn-primary" onclick="location.href='VInfo_personal1_Th.php'">Agregar Nueva info personal</button>
                 </div>
     <!-- Contenedor para el scroll horizontal -->
-    <div style="max-height: 400px; overflow-y: auto;">
+    <div style="max-height: 1000px; overflow-y: auto;">
                 <table class="table table-bordered table-hover">
             <thead class="table-dark">
                 <tr>
-                    <th>Id</th>
-                    <th>Numero documento</th>
+                    <th>Id Usuario</th>
+                    <th>Número documento</th>
                     <th>Tipo indentificación</th>
                     <th>Fecha de nacimiento</th>
                     <th>Nombre</th>
@@ -130,8 +136,9 @@
             <?php
                         try {
                             // Conexión con PDO a SQL Server
-                            $co = new PDO("sqlsrv:server=SRVVSANDIEGO\\SRVDESARROLLO;Database=ADMINISTRATIVA", "klozanoq", "Colombia2023*");
-                            $co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                            require_once(__DIR__ . '/../Config/db.php');
+                            $pdo = new db();
+                            $co = $pdo->conexion();
                             
                             // Consulta a la base de datos
                             $sql = "SELECT * FROM RPPI.informacionpersonal";
@@ -141,7 +148,7 @@
                             while($mostrar = $stmt->fetch(PDO::FETCH_ASSOC)) {
                         ?>
                 <tr>
-                    <td><?php echo $mostrar ['Id_informacion_personal'] ?></td>
+                    <td><?php echo $mostrar ['Id_usuario_persona_fk'] ?></td>
                     <td><?php echo $mostrar ['Num_documento'] ?></td>
                     <td><?php echo $mostrar ['Tipo_identificacion'] ?></td>
                     <td><?php echo $mostrar ['Fec_nacimiento'] ?></td>
@@ -276,7 +283,9 @@
             </main>
         </div>
     </div><br>
+    <br><br><br>    
     <footer>
+        <br> 
         <div class="container container-footer mb-5 px-4 py-5" id="principal-section-footer">
             <div class="region region-footer">
                 <div class="d-block">

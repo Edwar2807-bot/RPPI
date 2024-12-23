@@ -67,7 +67,6 @@
                         </div>
                         <button type="submit" class="btn-sesion">Registrarse</button>
                         <br><br>
-                        <a href="../Login.html" class="btn-reg">Iniciar sesión </a>
                         <a href="../Login.html" class="forgot-password">¿Ya tienes una cuenta?</a>
                     </form>
                 </div>

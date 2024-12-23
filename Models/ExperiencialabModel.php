@@ -17,11 +17,11 @@ class ExperiencialaboralModel
         return $stmt->fetchAll();
     }
 
-    public function setExperiencialaboral($Empresa, $Cargo, $Fec_ini, $Fec_fin, $Emp_actual, $Horario, $Id_informacion_personal_exp_fk)
+    public function setExperiencialaboral($Empresa, $Cargo, $Fec_ini, $Fec_fin, $Emp_actual, $Horario, $Id_informacion_personal_exp_fk, $Id_Usuario)
     {
         try {
-            $stmt = $this->pdo->prepare("INSERT INTO RPPI.ExperienciaLaboral (Empresa, Cargo, Fec_ini, Fec_fin, Emp_actual, Horario, Id_informacion_personal_exp_fk ) 
-                                                    VALUES (:Empresa, :Cargo, :Fec_ini, :Fec_fin, :Emp_actual, :Horario, :Id_informacion_personal_exp_fk)");
+            $stmt = $this->pdo->prepare("INSERT INTO RPPI.ExperienciaLaboral (Empresa, Cargo, Fec_ini, Fec_fin, Emp_actual, Horario, Id_informacion_personal_exp_fk, Id_Usuario) 
+                                                    VALUES (:Empresa, :Cargo, :Fec_ini, :Fec_fin, :Emp_actual, :Horario, :Id_informacion_personal_exp_fk, :Id_Usuario)");
             $stmt->bindParam(":Empresa", $Empresa);
             $stmt->bindParam(":Cargo", $Cargo);
             $stmt->bindParam(":Fec_ini", $Fec_ini);
@@ -29,6 +29,7 @@ class ExperiencialaboralModel
             $stmt->bindParam(":Emp_actual", $Emp_actual);
             $stmt->bindParam(":Horario", $Horario);
             $stmt->bindParam(":Id_informacion_personal_exp_fk", $Id_informacion_personal_exp_fk); // Sin espacio
+            $stmt->bindParam(":Id_Usuario", $Id_Usuario);
             $stmt->execute();
         } catch (PDOException $e) {
             echo "Error en la inserción: " . $e->getMessage();

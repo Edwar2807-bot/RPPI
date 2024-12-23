@@ -18,26 +18,35 @@ class EvaluacionpasanteModel
         return $stmt->fetchAll();
     }
 
-    public function setEvaluacionpasante($Proyecto_eval_pasante, $Horario_eval_pasante, $Reglamento_eval_pasante, $Concepto_eval_pasante, $Id_usuario_evalp_fk)
+    public function setEvaluacionpasante($Proyecto_eval_pasante, $Horario_eval_pasante, $Reglamento_eval_pasante, $Concepto_eval_pasante, $Id_usuario_evalp_fk, $Nombre, $Apellido, $Cedula, $Id_Pasantia)
     {
-        $stmt = $this->pdo->prepare("INSERT INTO RPPI.EvaluacionPasante VALUES(:Proyecto_eval_pasante, :Horario_eval_pasante, :Reglamento_eval_pasante, :Concepto_eval_pasante, :Id_usuario_evalp_fk)");
+        $stmt = $this->pdo->prepare("INSERT INTO RPPI.EvaluacionPasante VALUES(:Proyecto_eval_pasante, :Horario_eval_pasante, :Reglamento_eval_pasante, :Concepto_eval_pasante, :Id_usuario_evalp_fk, :Nombre, :Apellido, :Cedula, :Id_Pasantia)");
         $stmt->bindParam(":Proyecto_eval_pasante", $Proyecto_eval_pasante);
         $stmt->bindParam(":Horario_eval_pasante", $Horario_eval_pasante);
         $stmt->bindParam(":Reglamento_eval_pasante", $Reglamento_eval_pasante);
         $stmt->bindParam(":Concepto_eval_pasante", $Concepto_eval_pasante);
         $stmt->bindParam(":Id_usuario_evalp_fk", $Id_usuario_evalp_fk);
+        $stmt->bindParam(":Nombre", $Nombre);
+        $stmt->bindParam(":Apellido", $Apellido);
+        $stmt->bindParam(":Cedula", $Cedula);
+        $stmt->bindParam(":Id_Pasantia", $Id_Pasantia);
+
         $stmt->execute();
     }
 
-    public function updateEvaluacionpasante($Id_evaluacion_pasante, $Proyecto_eval_pasante, $Horario_eval_pasante, $Reglamento_eval_pasante, $Concepto_eval_pasante, $Id_usuario_evalp_fk )
+    public function updateEvaluacionpasante($Id_evaluacion_pasante, $Proyecto_eval_pasante, $Horario_eval_pasante, $Reglamento_eval_pasante, $Concepto_eval_pasante, $Id_usuario_evalp_fk,$Nombre, $Apellido, $Cedula, $Id_Pasantia )
     {
-        $stmt = $this->pdo->prepare("UPDATE RPPI.EvaluacionPasante SET Proyecto_eval_pasante = :Proyecto_eval_pasante, Horario_eval_pasante = :Horario_eval_pasante, Reglamento_eval_pasante = :Reglamento_eval_pasante, Concepto_eval_pasante = :Concepto_eval_pasante, Id_usuario_evalp_fk  = :Id_usuario_evalp_fk  WHERE Id_evaluacion_pasante = :Id_evaluacion_pasante");
+        $stmt = $this->pdo->prepare("UPDATE RPPI.EvaluacionPasante SET Proyecto_eval_pasante = :Proyecto_eval_pasante, Horario_eval_pasante = :Horario_eval_pasante, Reglamento_eval_pasante = :Reglamento_eval_pasante, Concepto_eval_pasante = :Concepto_eval_pasante, Id_usuario_evalp_fk  = :Id_usuario_evalp_fk, Nombre = :Nombre, Apellido = :Apellido, Cedula =:Cedula, Id_Pasantia = :Id_Pasantia  WHERE Id_evaluacion_pasante = :Id_evaluacion_pasante");
         $stmt->bindParam(":Id_evaluacion_pasante", $Id_evaluacion_pasante);
         $stmt->bindParam(":Proyecto_eval_pasante", $Proyecto_eval_pasante);
         $stmt->bindParam(":Horario_eval_pasante", $Horario_eval_pasante);
         $stmt->bindParam(":Reglamento_eval_pasante", $Reglamento_eval_pasante);
         $stmt->bindParam(":Concepto_eval_pasante", $Concepto_eval_pasante);
         $stmt->bindParam(":Id_usuario_evalp_fk", $Id_usuario_evalp_fk);
+        $stmt->bindParam(":Nombre", $Nombre);
+        $stmt->bindParam(":Apellido", $Apellido);
+        $stmt->bindParam(":Cedula", $Cedula);
+        $stmt->bindParam(":Id_Pasantia", $Id_Pasantia);
         $stmt->execute();
     }
 

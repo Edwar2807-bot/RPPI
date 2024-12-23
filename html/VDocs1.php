@@ -1,3 +1,9 @@
+<?php
+session_start(); // Esto debe ser lo primero en el archivo
+require_once('../PHP/VerificacionAcceso.php');
+verificarAcceso();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -90,20 +96,22 @@
                     <form action="../Controllers/DocumentoController.php" method="post" enctype="multipart/form-data">
                             <div class="form-row">
                                 <label class="lb1" for="Tipo_documento">Tipo de documento </label>
-                                <label class="lb2" for="Documento">Aduntar documento</label>
+                                <label class="lb2" for="Documento">Adjuntar documento</label>
                             </div>
                             <div class="form-row1">
                                 <input type="text" class="form-control1" id="Tipo_documento" name="Tipo_documento" placeholder="Tipo documento" required>
                                 <input type="file" class="form-control2" id="Documento" name="Documento"  required>
                             </div>
                             <a href="VDocs.php" type="submit" class="btn-can">Cancelar </a>
-                            <button type="submit" name="setDocumento" class="btn-reg">Registrarse</button>
+                            <button type="submit" name="setDocumento" class="btn-reg">Registrar</button>
                     </form>
                 </div>
             </main>
         </div>
     </div><br>
+    <br><br><br>    
     <footer>
+        <br> 
         <div class="container container-footer mb-5 px-4 py-5" id="principal-section-footer">
             <div class="region region-footer">
                 <div class="d-block">

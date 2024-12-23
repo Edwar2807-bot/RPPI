@@ -1,3 +1,8 @@
+<?php
+session_start(); // Esto debe ser lo primero en el archivo
+require_once('../PHP/VerificacionAcceso.php');
+verificarAcceso();
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -6,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
-    <title>Información laboral | INVIMA</title>
+    <title>Información Personal | INVIMA</title>
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -81,18 +86,12 @@
         </aside>
         <div class="main">
             <nav class="navbar navbar-expand px-4 py-3"><br>
-                <h3>Información Laboral</h3><br>
-
-                <div class="navbar-collapse collapse">
-                    <ul class="navbar-nav ms-auto">
-                    <li>
-                        <a href="../PHP/logout.php" class="sidebar-link"> <!-- Cambiado aquí -->
-                            <i class="lni lni-exit"></i>
-                            <span>Cerrar Sesión</span>
-                        </a>
-                    </li>
-                    </ul>
-                </div>
+                <div class="container-fluid d-flex align-items-center justify-content-between">
+                    <h3 class="mb-0 " >Información Personal</h3><br>
+                    <a href="../PHP/logout.php" class="sidebar-link"> <!-- Cambiado aquí -->
+                        <i class="lni lni-exit"></i>
+                        <span>Cerrar Sesión</span>
+                    </a>
             </nav><br><br>
             <main id="main-content" class="content">
                 <!-- Buscador y Filtro -->
@@ -104,7 +103,7 @@
                     <button class="btn btn-primary" onclick="location.href='VInfo_personal2.1.php'">Agregar Nueva info personal</button>
                 </div>
     <!-- Contenedor para el scroll horizontal -->
-    <div style="max-height: 400px; overflow-y: auto;">
+    <div style="max-height: 1000px; overflow-y: auto;">
                 <table class="table table-bordered table-hover">
             <thead class="table-dark">
                 <tr>
@@ -128,20 +127,24 @@
             </thead>
             <tbody id="tableBody">
             <?php
-                        try {
-                            // Conexión con PDO a SQL Server
-                            $co = new PDO("sqlsrv:server=SRVVSANDIEGO\\SRVDESARROLLO;Database=ADMINISTRATIVA", "klozanoq", "Colombia2023*");
-                            $co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                            
-                            // Consulta a la base de datos
-                            $sql = "SELECT * FROM RPPI.informacionpersonal";
-                            $stmt = $co->query($sql);
+                try {
+                    // Conexión con PDO a SQL Server
+                    $co = new PDO("sqlsrv:server=DESKTOP-6VHCU6I;database=RPPI");
+                    $co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    
+                    // Obtener el ID del usuario desde la sesión
+                    $usuario_id = $_SESSION['Usuario_id'];
+                    // Consulta a la base de datos
+                    $sql = "SELECT * FROM RPPI.informacionpersonal Where Id_usuario_persona_fk = :usuario_id";
+                    $stmt = $co->prepare($sql);
+                    $stmt->bindParam(':usuario_id', $usuario_id, PDO::PARAM_INT);
+                    $stmt->execute();
 
-                            // Recorriendo los resultados
-                            while($mostrar = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                        ?>
+                    // Recorriendo los resultados
+                    while($mostrar = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                ?>
                 <tr>
-                    <td><?php echo $mostrar ['Id_informacion_personal'] ?></td>
+                    <td><?php echo $mostrar ['Id_usuario_persona_fk'] ?></td>
                     <td><?php echo $mostrar ['Num_documento'] ?></td>
                     <td><?php echo $mostrar ['Tipo_identificacion'] ?></td>
                     <td><?php echo $mostrar ['Fec_nacimiento'] ?></td>
@@ -276,7 +279,9 @@
             </main>
         </div>
     </div><br>
+    <br><br><br>    
     <footer>
+        <br><br> 
         <div class="container container-footer mb-5 px-4 py-5" id="principal-section-footer">
             <div class="region region-footer">
                 <div class="d-block">

@@ -15,7 +15,7 @@ class db
     {
         try {
             // Utiliza 'sqlsrv' para conectarte a SQL Server
-            $pdo = new PDO("sqlsrv:server=$this->servername;database=$this->dbname");
+            $pdo = new PDO("sqlsrv:server=$this->servername;database=$this->dbname"); 
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             if (DEBUG) {

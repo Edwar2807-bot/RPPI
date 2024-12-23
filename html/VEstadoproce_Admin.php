@@ -105,7 +105,7 @@
                     <button class="btn btn-primary" onclick="location.href='VEstadoproce1_Admin.php'">Agregar Nuevo Estado Usuario</button>
                 </div>
                 <!-- Tabla -->
-                <div style="max-height: 400px; overflow-y: auto;">
+                <div style="max-height: 1000px; overflow-y: auto;">
                 <table class="table table-bordered table-hover">
                     <thead class="table-dark">
                         <tr>
@@ -120,8 +120,9 @@
                     <?php
                         try {
                             // Conexión con PDO a SQL Server
-                            $co = new PDO("sqlsrv:server=SRVVSANDIEGO\\SRVDESARROLLO;Database=ADMINISTRATIVA", "klozanoq", "Colombia2023*");
-                            $co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                            require_once(__DIR__ . '/../Config/db.php');
+                            $pdo = new db();
+                            $co = $pdo->conexion();
                             
                             // Consulta a la base de datos
                             $sql = "SELECT * FROM RPPI.EstadoProcedimiento";
@@ -205,7 +206,9 @@
             </main>
         </div>
     </div><br>
+    <br><br><br>    
     <footer>
+        <br> 
         <div class="container container-footer mb-5 px-4 py-5" id="principal-section-footer">
             <div class="region region-footer">
                 <div class="d-block">

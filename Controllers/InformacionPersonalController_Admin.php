@@ -58,11 +58,10 @@ class InformacionPersonalController
             exit;
         }
 
-        // Registrar información personal
+        // Registrar sonal
         $this->model->setInformacionPersonal($Num_documento, $Tipo_identificacion, $Fec_nacimiento, $Nombre, $Apellido, $Correo, $Telefono, $Direccion, $Fec_expedicion, $Ciudad, $Estrato, $Genero, $Nivel_educativo, $Foto, $Id_usuario_persona_fk, $Id_post_pasantias_fk);
         echo '
             <script>alert("Informacion personal registrada");
-            window.location = "../html/VInfo_personal_Admin.php";
             </script>
         ';
     }

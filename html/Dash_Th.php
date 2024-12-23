@@ -94,6 +94,13 @@ if (!isset($_SESSION['Correo'])) {
                 </ul>
             </aside>
             <div class="main">
+                <div class="mx-auto text-center">
+                    <h4 class="mb-0">
+                        <?php 
+                            echo '<span style="font-weight: bold;">Talento Humano</span>';
+                        ?>
+                    </h4>
+                </div>
                 <nav class="navbar navbar-expand px-4 py-3">
                     <form action="#" class="d-none d-sm-inline-block">
                     </form>
@@ -153,7 +160,7 @@ if (!isset($_SESSION['Correo'])) {
                                         <div class="card-body py-4">
                                             <a href="VDocs_Th.php" class="div text-decoration-none">
                                                 <h5 class="fw-bold d-flex align-items-center">
-                                                    Documentos
+                                                    Otros Documentos
                                                     <i class="lni lni-files"></i>
                                                 </h5>
                                             </a>

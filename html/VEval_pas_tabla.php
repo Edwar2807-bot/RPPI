@@ -1,3 +1,9 @@
+<?php
+session_start(); // Esto debe ser lo primero en el archivo
+require_once('../PHP/VerificacionAcceso.php');
+verificarAcceso();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -101,11 +107,14 @@
                     <button class="btn btn-primary" onclick="location.href='VEval_pas.php'">Agregar Nueva Evaluación</button>
                 </div>
                 <!-- Tabla -->
-                <div style="max-height: 400px; overflow-y: auto;">
+                <div style="max-height: 1000px; overflow-y: auto;">
                 <table class="table table-bordered table-hover">
                     <thead class="table-dark">
                         <tr>
-                            <th>Id evaluación pasante </th>
+                            <th>Nombre del Pasante</th>
+                            <th>Apellido</th>
+                            <th>Cedula</th>
+                            <th>Id de la Pasantía</th>
                             <th>¿Cumplió con los horarios?</th>
                             <th>¿Cumplió con el proyecto?</th>
                             <th>¿Cumplió con el reglamento?</th>
@@ -118,8 +127,9 @@
                     <?php
                         try {
                             // Conexión con PDO a SQL Server
-                            $co = new PDO("sqlsrv:server=SRVVSANDIEGO\\SRVDESARROLLO;Database=ADMINISTRATIVA", "klozanoq", "Colombia2023*");
-                            $co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                            require_once(__DIR__ . '/../Config/db.php');
+                            $pdo = new db();
+                            $co = $pdo->conexion();
                             
                             // Consulta a la base de datos
                             $sql = "SELECT * FROM RPPI.EvaluacionPasante";
@@ -129,7 +139,10 @@
                             while($mostrar = $stmt->fetch(PDO::FETCH_ASSOC)) {
                         ?>
                         <tr>
-                        <th><?php echo $mostrar['Id_evaluacion_pasante']; ?></th>
+                        <th><?php echo $mostrar['Nombre']; ?></th>
+                        <th><?php echo $mostrar['Apellido']; ?></th>
+                        <th><?php echo $mostrar['Cedula']; ?></th>
+                        <th><?php echo $mostrar['Id_Pasantia']; ?></th>
                         <th><?php echo $mostrar['Proyecto_eval_pasante']; ?></th>
                         <th><?php echo $mostrar['Horario_eval_pasante']; ?></th>
                         <th><?php echo $mostrar['Reglamento_eval_pasante']; ?></th>
@@ -227,8 +240,9 @@
                     <?php
                         try {
                             // Conexión con PDO a SQL Server
-                            $co = new PDO("sqlsrv:server=SRVVSANDIEGO\\SRVDESARROLLO;Database=ADMINISTRATIVA", "klozanoq", "Colombia2023*");
-                            $co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                            require_once(__DIR__ . '/../Config/db.php');
+                            $pdo = new db();
+                            $co = $pdo->conexion();
                             
                             // Consulta a la base de datos
                             $sql = "SELECT * FROM RPPI.LlamadoAtencion";
@@ -310,7 +324,9 @@
             </main>
         </div>
     </div><br>
+    <br><br><br>    
     <footer>
+        <br> 
         <div class="container container-footer mb-5 px-4 py-5" id="principal-section-footer">
             <div class="region region-footer">
                 <div class="d-block">

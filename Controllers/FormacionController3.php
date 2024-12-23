@@ -1,4 +1,5 @@
 <?php
+session_start(); 
 class FormacionController
 {
     private $model;
@@ -9,7 +10,7 @@ class FormacionController
         $this->model = new FormacionModel();
     }
 
-    public function setFormacion($Tipo_educacion, $Nivel_educacion, $Institucion, $Programa, $Fec_terminacion, $Id_informacion_personal_form_fk = 6)
+    public function setFormacion($Tipo_educacion, $Nivel_educacion, $Institucion, $Programa, $Fec_terminacion, $Id_informacion_personal_form_fk = 6, $Id_Usuario)
     {
         if (empty($Tipo_educacion) || empty($Nivel_educacion) || empty($Institucion) || empty($Programa) || empty($Fec_terminacion)){
             echo '
@@ -19,7 +20,7 @@ class FormacionController
             ';
             exit;
         } else {
-            $this->model->setFormacion($Tipo_educacion, $Nivel_educacion, $Institucion, $Programa, $Fec_terminacion, $Id_informacion_personal_form_fk);
+            $this->model->setFormacion($Tipo_educacion, $Nivel_educacion, $Institucion, $Programa, $Fec_terminacion, $Id_informacion_personal_form_fk, $Id_Usuario);
             echo '
             <script>alert("Formacion registrada correctamente");
             window.location = "../html/VFormacion3.1.php";
@@ -85,8 +86,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['setFormacion'])) {
+        $Id_Usuario = $_SESSION['Usuario_id'];
         $Id_informacion_personal_form_fk = !empty($_POST['Id_informacion_personal_form_fk']) ? $_POST['Id_informacion_personal_form_fk'] : 6; // Valor predeterminado si no se proporciona
-        $FormacionController->setFormacion($_POST['Tipo_educacion'], $_POST['Nivel_educacion'], $_POST['Institucion'], $_POST['Programa'], $_POST['Fec_terminacion'], $Id_informacion_personal_form_fk);
+        $FormacionController->setFormacion($_POST['Tipo_educacion'], $_POST['Nivel_educacion'], $_POST['Institucion'], $_POST['Programa'], $_POST['Fec_terminacion'], $Id_informacion_personal_form_fk, $Id_Usuario);
         exit; 
     }
     if (isset($_POST['deleteFormacion'])) {

@@ -9,9 +9,9 @@ class EvaluacionpasanteController
         $this->model = new EvaluacionpasanteModel();
     }
 
-    public function setEvaluacionpasante($Proyecto_eval_pasante, $Horario_eval_pasante, $Reglamento_eval_pasante, $Concepto_eval_pasante, $Id_usuario_evalp_fk )
+    public function setEvaluacionpasante($Proyecto_eval_pasante, $Horario_eval_pasante, $Reglamento_eval_pasante, $Concepto_eval_pasante, $Id_usuario_evalp_fk, $Nombre, $Apellido, $Cedula, $Id_Pasantia )
     {
-        if (empty($Proyecto_eval_pasante) || empty($Horario_eval_pasante) || empty($Reglamento_eval_pasante) || empty($Concepto_eval_pasante) || empty($Id_usuario_evalp_fk )){
+        if (empty($Proyecto_eval_pasante) || empty($Horario_eval_pasante) || empty($Reglamento_eval_pasante) || empty($Concepto_eval_pasante) || empty($Id_usuario_evalp_fk ) || empty($Nombre) || empty($Apellido) || empty($Cedula ) || empty($Id_Pasantia )){
             echo '
             <script>alert("Completa todos los campos para poder registrar la Evaluacion del pasante");
             window.location = "../html/VEval_pas.php";
@@ -19,7 +19,7 @@ class EvaluacionpasanteController
             ';
             exit;
         } else {
-            $this->model->setEvaluacionpasante($Proyecto_eval_pasante, $Horario_eval_pasante, $Reglamento_eval_pasante, $Concepto_eval_pasante, $Id_usuario_evalp_fk );
+            $this->model->setEvaluacionpasante($Proyecto_eval_pasante, $Horario_eval_pasante, $Reglamento_eval_pasante, $Concepto_eval_pasante, $Id_usuario_evalp_fk, $Nombre, $Apellido, $Cedula, $Id_Pasantia );
             echo '
             <script>alert("Evaluacion del pasante registrada correctamente");
             window.location = "../html/VEval_pas_tabla.php";
@@ -52,7 +52,7 @@ class EvaluacionpasanteController
         }
     }
 
-    public function updateEvaluacionpasante($Id_evaluacion_pasante, $Proyecto_eval_pasante, $Horario_eval_pasante, $Reglamento_eval_pasante, $Concepto_eval_pasante, $Id_usuario_evalp_fk )
+    public function updateEvaluacionpasante($Id_evaluacion_pasante, $Proyecto_eval_pasante, $Horario_eval_pasante, $Reglamento_eval_pasante, $Concepto_eval_pasante, $Id_usuario_evalp_fk,$Nombre, $Apellido, $Cedula, $Id_Pasantia )
     {
         if (empty($Id_evaluacion_pasante) || empty($Proyecto_eval_pasante) || empty($Horario_eval_pasante) || empty($Reglamento_eval_pasante) || empty($Concepto_eval_pasante) || empty($Id_usuario_evalp_fk )) {
             echo '
@@ -61,7 +61,7 @@ class EvaluacionpasanteController
             ';
             exit;
         } else {
-            $this->model->updateEvaluacionpasante($Id_evaluacion_pasante, $Proyecto_eval_pasante, $Horario_eval_pasante, $Reglamento_eval_pasante, $Concepto_eval_pasante, $Id_usuario_evalp_fk );
+            $this->model->updateEvaluacionpasante($Id_evaluacion_pasante, $Proyecto_eval_pasante, $Horario_eval_pasante, $Reglamento_eval_pasante, $Concepto_eval_pasante, $Id_usuario_evalp_fk, $Nombre, $Apellido, $Cedula, $Id_Pasantia );
             echo '
             <script>alert("Evaluacion del pasante actualizada correctamente");
             window.location = "../html/VEval_pas_tabla.php";
@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['setEvaluacionpasante'])) {
-        $EvaluacionpasanteController->setEvaluacionpasante($_POST['Proyecto_eval_pasante'], $_POST['Horario_eval_pasante'], $_POST['Reglamento_eval_pasante'], $_POST['Concepto_eval_pasante'], $_POST['Id_usuario_evalp_fk']=1);
+        $EvaluacionpasanteController->setEvaluacionpasante($_POST['Proyecto_eval_pasante'], $_POST['Horario_eval_pasante'], $_POST['Reglamento_eval_pasante'], $_POST['Concepto_eval_pasante'], $_POST['Id_usuario_evalp_fk']=1,$_POST['Nombre'],$_POST['Apellido'],$_POST['Cedula'],$_POST['Id_Pasantia'] );
         exit; 
     }
     if (isset($_POST['deleteEvaluacionpasante'])) {
@@ -92,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit;
     }
     if (isset($_POST['updateEvaluacionpasante'])) {
-        $EvaluacionpasanteController->updateEvaluacionpasante($_POST['Id_evaluacion_pasante'],$_POST['Proyecto_eval_pasante'], $_POST['Horario_eval_pasante'], $_POST['Reglamento_eval_pasante'], $_POST['Concepto_eval_pasante'] ,$_POST['Id_usuario_evalp_fk']=1);
+        $EvaluacionpasanteController->updateEvaluacionpasante($_POST['Id_evaluacion_pasante'],$_POST['Proyecto_eval_pasante'], $_POST['Horario_eval_pasante'], $_POST['Reglamento_eval_pasante'], $_POST['Concepto_eval_pasante'] ,$_POST['Id_usuario_evalp_fk']=1,$_POST['Nombre'],$_POST['Apellido'],$_POST['Cedula'],$_POST['Id_Pasantia']);
         exit;                                                                                                                                                             
     }
 }

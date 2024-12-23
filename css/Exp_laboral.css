@@ -86,8 +86,14 @@
     border:  1px solid #39A5C7;
 }
 
-
-
+table {
+    width: 100%; /* La tabla ocupa el ancho completo del contenedor */
+    border-collapse: collapse; /* Une los bordes de las celdas */
+}
+  th, td {
+    white-space: nowrap; /* Evita que el texto se corte en varias líneas */
+    text-align: left; /* Alineación del texto */
+  }
 .control-container {
     display: flex;
     justify-content: space-between;
@@ -152,7 +158,6 @@ footer {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para diferenciar del fondo */
     position: relative; /* Mantener relativo para moverlo respecto al footer */
     margin-top: -100px; /* Ajusta este valor para mover hacia arriba */
-    z-index: 10; /* Asegura que esté por encima del fondo */
 }
 
 .region-footer {

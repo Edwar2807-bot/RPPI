@@ -1,3 +1,9 @@
+<?php
+session_start(); // Esto debe ser lo primero en el archivo
+require_once('../PHP/VerificacionAcceso.php');
+verificarAcceso();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -212,18 +218,19 @@
                 };
             </script>
 
-            <button type="submit" name="setInformacionPersonal" class="btn-reg">Registrarse</button>
+            <button type="submit" name="setInformacionPersonal" class="btn-reg">Guardar</button>
         </form>
 
                 </div>
             </main>
         </div>
-    </div><br>
+    </div><br><br><br>
     <footer>
-        <div class="container container-footer mb-5 px-4 py-5" id="principal-section-footer">
+    <br><br>
+        <div class="container container-footer mb-5 px-4 py-3" id="principal-section-footer">
             <div class="region region-footer">
                 <div class="d-block">
-                    <div id="block-invima-theme-logofooter-2" class="col-12 block-footer-section-logo col-md-3">
+                    <div id="block-invima-theme-logofooter-2" class="col-12 block-footer-section-logo col-md-3 py-3">
                         <div class="">
                             <img loading="lazy" src="../img/invima.png" width="134" alt="Logo Invima" class="mb-25">
                         </div>

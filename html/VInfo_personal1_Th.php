@@ -1,3 +1,9 @@
+<?php
+session_start(); // Esto debe ser lo primero en el archivo
+require_once('../PHP/VerificacionAcceso.php');
+verificarAcceso();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -218,13 +224,15 @@
                 };
             </script>
 
-            <button type="submit" name="setInformacionPersonal" class="btn-reg">Registrarse</button>
+            <button type="submit" name="setInformacionPersonal" class="btn-reg">Guardar</button>
         </form>
                 </div>
             </main>
         </div>
     </div><br>
+    <br><br><br>    
     <footer>
+        <br> 
         <div class="container container-footer mb-5 px-4 py-5" id="principal-section-footer">
             <div class="region region-footer">
                 <div class="d-block">

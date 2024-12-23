@@ -1,3 +1,9 @@
+<?php
+session_start(); // Esto debe ser lo primero en el archivo
+require_once('../PHP/VerificacionAcceso.php');
+verificarAcceso();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -95,6 +101,25 @@
         <main id="main-content" class="content">
             <div class="form-login">
                 <form action="../Controllers/EvaluacionpasanteController.php" method="POST">
+
+                    <div class="form-row">
+                        <label class="lb1" for="pr1">Nombre del Pasante</label>
+                        <label class="lb2" for="pr2">Apellido</label>
+                    </div>
+                    <div class="form-row1">
+                        <input type="text" class="form-control1" id="pr3" name="Nombre" placeholder="Nombre del Pasante" required>
+                        <input type="text" class="form-control2" id="pr4" name="Apellido" placeholder="Apellido" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label class="lb1" for="pr1">Cedula</label>
+                        <label class="lb2" for="pr2">Id de la pasantía</label>
+                    </div>
+                    <div class="form-row1">
+                        <input type="number" class="form-control1" id="pr3" name="Cedula" placeholder="Identifiación del pasante" required>
+                        <input type="number" class="form-control2" id="pr4" name="Id_Pasantia" placeholder="Identifiación de la pasantía" required>
+                    </div>
+
                     <div class="form-row">
                         <label class="lb1" for="pr1">¿Cumplió con los horarios?</label>
                         <label class="lb2" for="pr2">¿Cumplió con el proyecto?</label>
@@ -156,7 +181,9 @@
             </div>
         </main>
     </div><br>   
+    <br><br><br>    
     <footer>
+        <br> 
         <div class="container container-footer mb-5 px-4 py-5" id="principal-section-footer">
             <div class="region region-footer">
                 <div class="d-block">

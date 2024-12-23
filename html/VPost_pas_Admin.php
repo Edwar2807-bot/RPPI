@@ -1,3 +1,8 @@
+<?php
+session_start(); // Esto debe ser lo primero en el archivo
+require_once('../PHP/VerificacionAcceso.php');
+verificarAcceso();
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -101,7 +106,7 @@
                     </div>
                     <button class="btn btn-primary" onclick="location.href='VPost_pasant1_Admin.php'">Agregar Nueva postulacion</button>
                 </div>
-                <div style="max-height: 400px; overflow-y: auto;">
+                <div style="max-height: 1000px; overflow-y: auto;">
                 <table class="table table-bordered table-hover">
                         <thead class="table-dark">
                             <tr>
@@ -123,7 +128,7 @@
                         <?php
                             try {
                                 // Conexión con PDO a SQL Server
-                                $co = new PDO("sqlsrv:server=SRVVSANDIEGO\\SRVDESARROLLO;Database=ADMINISTRATIVA", "klozanoq", "Colombia2023*");
+                                $co = new PDO("sqlsrv:server=DESKTOP-6VHCU6I;database=RPPI");
                                 $co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                                 
                                 // Consulta a la base de datos
@@ -167,11 +172,11 @@
                                             <form action="../Controllers/PostulacionpasController_Admin.php" method="POST">
                                                 <input type="hidden" name="Id_post_pasantia" value="<?php echo $mostrar['Id_post_pasantia']; ?>">
                                                 <div class="mb-3">
-                                                    <label class="lb1" for="Entidad">Entidad de la que proviene </label>
+                                                    <label class="lb1" for="Entidad">Institución de la que proviene </label>
                                                     <input type="text" class="form-control" id="Entidad" name="Entidad" value="<?php echo $mostrar['Entidad']; ?>" required>
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label class="lb2" for="Programa_pasantias">Programa que estudio</label>
+                                                    <label class="lb2" for="Programa_pasantias">Programa académico</label>
                                                     <input type="text" class="form-control" id="Programa_pasantias" name="Programa_pasantias"  value="<?php echo $mostrar['Programa_pasantias']; ?>" required>
                                                 </div>
                                                 <div class="mb-3">
@@ -256,7 +261,9 @@
             </main>
         </div>
     </div><br>
+    <br><br><br>    
     <footer>
+        <br> 
         <div class="container container-footer mb-5 px-4 py-5" id="principal-section-footer">
             <div class="region region-footer">
                 <div class="d-block">

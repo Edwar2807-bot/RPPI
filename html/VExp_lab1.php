@@ -1,3 +1,9 @@
+<?php
+session_start(); // Esto debe ser lo primero en el archivo
+require_once('../PHP/VerificacionAcceso.php');
+verificarAcceso();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -106,7 +112,7 @@
                             <input type="date" class="form-control2" id="Fechat" name="Fec_fin" required>
                         </div>
                         <div class="form-row">
-                            <label class="lb1" for="Emp_actual">¿Empleo actual?</label>
+                            <label class="lb1" for="Emp_actual">¿Labora actualmente?</label>
                             <label class="lb4" for="Horario">Horario laboral</label>
                         </div>
                         <div class="form-row1">
@@ -129,7 +135,9 @@
             </main>
         </div>
     </div><br>
+    <br><br><br>    
     <footer>
+        <br> 
         <div class="container container-footer mb-5 px-4 py-5" id="principal-section-footer">
             <div class="region region-footer">
                 <div class="d-block">

@@ -1,3 +1,9 @@
+<?php
+session_start(); // Esto debe ser lo primero en el archivo
+require_once('../PHP/VerificacionAcceso.php');
+verificarAcceso();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -97,12 +103,12 @@
                 <div class="form-login">
                     <form>
                         <div class="form-row">
-                            <label class="lb1" for="Pest">Programa que estudio</label>
-                            <label class="lb3" for="Entt">Entidad de la que proviene</label>
+                            <label class="lb1" for="Pest">Programa académico</label>
+                            <label class="lb3" for="Entt">Institución de la que proviene</label>
                         </div>
                         <div class="form-row1">
                         <input type="text" class="form-control1" id="Pest" name="Pest" placeholder="Digite el programa" required>
-                        <input type="text" class="form-control2" id="Fechat" name="Fechat" placeholder="Seleccione la entidad"  required>
+                        <input type="text" class="form-control2" id="Fechat" name="Fechat" placeholder="Nombre completo de la institución"  required>
                         </div>
                         <div class="form-row">
                             <label class="lb1" for="Dpas">Duración de pasantías</label>
@@ -148,7 +154,9 @@
             </main>
         </div>
     </div><br>
+    <br><br><br>    
     <footer>
+        <br> 
         <div class="container container-footer mb-5 px-4 py-5" id="principal-section-footer">
             <div class="region region-footer">
                 <div class="d-block">

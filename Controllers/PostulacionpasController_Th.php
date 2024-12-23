@@ -139,7 +139,7 @@ class PostulacionpasantiasController
             
             echo '
             <script>alert("Postulacion registrada correctamente");
-            window.location = "../html/VPost_pasant3.php";
+                window.location = "../html/VPost_pasant3.php";
             </script>
             ';
         } catch (Exception $e) {
@@ -172,9 +172,9 @@ class PostulacionpasantiasController
         }
     }
 
-    public function updatePostulacionpasantias($Id_post_pasantia, $Entidad, $Programa_pasantias, $Medio_ent, $Area_pas, $Hoja_vida, $Carta_presentacion, $Documento_id, $Duracion, $Fec_ini_pas, $Estado_procedimiento_post_fk, $Aceptado)
+    public function updatePostulacionpasantias($Id_post_pasantia, $Entidad, $Programa_pasantias, $Medio_ent, $Area_pas, $Hoja_vida, $Carta_presentacion, $Documento_id, $Duracion, $Fec_ini_pas, $Estado_procedimiento_post_fk, $Aceptado, $Observaciones)
     {
-        if (empty($Id_post_pasantia) || empty($Entidad) || empty($Programa_pasantias) || empty($Medio_ent) || empty($Area_pas) || empty($Hoja_vida) || empty($Carta_presentacion) || empty($Documento_id) || empty($Duracion) || empty($Fec_ini_pas) || empty($Estado_procedimiento_post_fk) || empty($Aceptado)) {
+        if (empty($Id_post_pasantia) || empty($Entidad) || empty($Programa_pasantias) || empty($Medio_ent) || empty($Area_pas) || empty($Hoja_vida) || empty($Carta_presentacion) || empty($Documento_id) || empty($Duracion) || empty($Fec_ini_pas) || empty($Estado_procedimiento_post_fk) || empty($Aceptado) || empty($Observaciones)) {
             echo '
             <script>alert("Completa todos los campos para actualizar la postulacion");
             window.location = "../html/Vsoli_pas.php";
@@ -182,10 +182,104 @@ class PostulacionpasantiasController
             ';
             exit;
         } else {
-            $this->model->updatePostulacionpasantias($Id_post_pasantia, $Entidad, $Programa_pasantias, $Medio_ent, $Area_pas, $Hoja_vida, $Carta_presentacion, $Documento_id, $Duracion, $Fec_ini_pas, $Estado_procedimiento_post_fk, $Aceptado);
+            $this->model->updatePostulacionpasantias($Id_post_pasantia, $Entidad, $Programa_pasantias, $Medio_ent, $Area_pas, $Hoja_vida, $Carta_presentacion, $Documento_id, $Duracion, $Fec_ini_pas, $Estado_procedimiento_post_fk, $Aceptado, $Observaciones);
             echo '
             <script>alert("postulacion actualizada correctamente");
             window.location = "../html/Vsoli_pas.php";
+            </script>
+            ';
+        }
+    }
+    public function updatePostulacionpasantiasTh($Id_post_pasantia,  $Area_pas,  $Duracion, $Fec_ini_pas,  $Aceptado, $Observaciones)
+    {
+        $campos_vacios = [];
+
+        if (empty($Id_post_pasantia)) {
+            $campos_vacios[] = "Id de Postulación";
+        }
+        if (empty($Area_pas)) {
+            $campos_vacios[] = "Área de Pasantía";
+        }
+        if (empty($Duracion)) {
+            $campos_vacios[] = "Duración";
+        }
+        if (empty($Fec_ini_pas)) {
+            $campos_vacios[] = "Fecha de Inicio";
+        }
+        if (empty($Aceptado)) {
+            $campos_vacios[] = "Estado de Aceptación";
+        }
+        if (empty($Observaciones)) {
+            $campos_vacios[] = "Observaciones";
+        }
+
+        // Si hay campos vacíos, creamos el mensaje
+        if (!empty($campos_vacios)) {
+            $mensaje = "Completa los siguientes campos para actualizar la postulación: " . implode(", ", $campos_vacios);
+            echo '
+            <script>
+                alert("' . $mensaje .'");
+                window.location = "../html/Vsoli_pas.php";
+            </script>
+            ';
+            exit;
+        }
+        else {
+            $this->model->updatePostulacionpasantiasTh($Id_post_pasantia,  $Area_pas,$Duracion, $Fec_ini_pas, $Aceptado, $Observaciones);
+
+            //Obtener Correo del pasante
+            require_once(__DIR__ . '/../Config/db.php');
+            $con = new db();
+            $pdo = $con->conexion();
+            // Consulta usando JOIN
+            $sql = "
+                SELECT IP.Correo
+                FROM RPPI.PostulacionPasantias PP
+                JOIN RPPI.InformacionPersonal IP
+                    ON IP.Id_usuario_persona_fk = PP.Id_Usuario
+                WHERE PP.Id_post_pasantia = :Id_post_pasantia
+            ";        
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindParam(':Id_post_pasantia', $Id_post_pasantia, PDO::PARAM_INT);
+            $stmt->execute();
+            $correo = $stmt->fetchColumn();
+            
+            if (empty($correo)) {
+                echo '
+                <script>
+                    alert("Usuario sin correo en información personal");
+                </script>
+                ';
+            }
+            else
+            {
+                echo '
+                <script>
+                    alert("Enviando correo a: ' . $correo . '");
+                </script>
+                ';
+            } 
+
+            //Envío de correo de actualización
+            $cuerpo_Correo = "
+                <p>Hola, esperamos te encuentres muy bien. A continuación, los resultados de la revisión de tu postulación a la Pasantía:</p>
+                <p><strong>Aceptado:</strong> {$Aceptado}</p>
+                <p><strong>Observaciones:</strong> {$Observaciones}</p>
+            ";
+
+            require_once '../PHP/EnvioEmail.php';
+            $EnviarCorreo = new EmailSender();
+            // Llamar al método para enviar el correo
+            $EnviarCorreo->sendEmail(
+                "$correo",           // Destinatario
+                "elopez@invima.gov.co",             // Remitente
+                'Respuesta de postulación para Pasantía', // Asunto
+                $cuerpo_Correo                      // Cuerpo del correo en HTML
+            );
+            echo '
+            <script>
+                alert("postulacion actualizada correctamente");
+                window.location = "../html/Vsoli_pas.php";
             </script>
             ';
         }
@@ -216,7 +310,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     if (isset($_POST['updatePostulacionpasantias'])) {
         $Estado_procedimiento_post_fk =!empty($_POST['Estado_procedimiento_post_fk']) ? $_POST['Estado_procedimiento_post_fk'] : 1;
-        $PostulacionpasantiasController->updatePostulacionpasantias($_POST['Id_post_pasantia'], $_POST['Entidad'], $_POST['Programa_pasantias'], $_POST['Medio_ent'], $_POST['Area_pas'], $_POST['Hoja_vida'], $_POST['Carta_presentacion'], $_POST['Documento_id'], $_POST['Duracion'], $_POST['Fec_ini_pas'], $Estado_procedimiento_post_fk,$_POST['Aceptado']);
+        $PostulacionpasantiasController->updatePostulacionpasantias($_POST['Id_post_pasantia'], $_POST['Entidad'], $_POST['Programa_pasantias'], $_POST['Medio_ent'], $_POST['Area_pas'], $_POST['Hoja_vida'], $_POST['Carta_presentacion'], $_POST['Documento_id'], $_POST['Duracion'], $_POST['Fec_ini_pas'], $Estado_procedimiento_post_fk,$_POST['Aceptado'],$_POST['Observaciones']);
+        exit;
+    }
+    if (isset($_POST['updatePostulacionpasantiasTh'])) {
+        $PostulacionpasantiasController->updatePostulacionpasantiasTh($_POST['Id_post_pasantia'], $_POST['Area_pas'], $_POST['Duracion'], $_POST['Fec_ini_pas'],$_POST['Aceptado'],$_POST['Observaciones']);
         exit;
     }
     

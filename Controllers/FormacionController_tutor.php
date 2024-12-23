@@ -9,7 +9,7 @@ class FormacionController
         $this->model = new FormacionModel();
     }
 
-    public function setFormacion($Tipo_educacion, $Nivel_educacion, $Institucion, $Programa, $Fec_terminacion, $Id_informacion_personal_form_fk = 6)
+    public function setFormacion($Tipo_educacion, $Nivel_educacion, $Institucion, $Programa, $Fec_terminacion, $Id_informacion_personal_form_fk = 6, $Id_Usuario)
     {
         if (empty($Tipo_educacion) || empty($Nivel_educacion) || empty($Institucion) || empty($Programa) || empty($Fec_terminacion)){
             echo '
@@ -19,7 +19,7 @@ class FormacionController
             ';
             exit;
         } else {
-            $this->model->setFormacion($Tipo_educacion, $Nivel_educacion, $Institucion, $Programa, $Fec_terminacion, $Id_informacion_personal_form_fk);
+            $this->model->setFormacion($Tipo_educacion, $Nivel_educacion, $Institucion, $Programa, $Fec_terminacion, $Id_informacion_personal_form_fk, $Id_Usuario);
             echo '
             <script>alert("Formacion registrada correctamente");
             window.location = "../html/VFormacion1_tutor.php";

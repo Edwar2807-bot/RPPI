@@ -1,3 +1,9 @@
+<?php
+session_start(); // Esto debe ser lo primero en el archivo
+require_once('../PHP/VerificacionAcceso.php');
+verificarAcceso();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -127,13 +133,15 @@
                             <input type="number" class="form-control2" id="Id_estado_usuario_fk" name="Id_estado_usuario_fk"  required>
                         </div>
                         <a href="VUsuario_Admin.php" type="submit" class="btn-can">Cancelar </a>
-                        <button type="submit" name="setUsuario" class="btn-reg">Registrarse</button>
+                        <button type="submit" name="setUsuario" class="btn-reg">Registrar</button>
                     </form>
                 </div>
             </main>
         </div>
     </div><br>
+    <br><br><br>    
     <footer>
+        <br> 
         <div class="container container-footer mb-5 px-4 py-5" id="principal-section-footer">
             <div class="region region-footer">
                 <div class="d-block">

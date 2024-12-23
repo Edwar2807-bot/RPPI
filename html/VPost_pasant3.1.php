@@ -1,3 +1,9 @@
+<?php
+session_start(); // Esto debe ser lo primero en el archivo
+require_once('../PHP/VerificacionAcceso.php');
+verificarAcceso();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -102,11 +108,11 @@
                 <div class="form-login">
                     <form action="../Controllers/PostulacionpasController3.php" method="post" enctype="multipart/form-data">
                         <div class="form-row">
-                            <label class="lb1" for="Entidad">Entidad de la que proviene </label>
-                            <label class="lb2" for="Programa_pasantias">Programa que estudio</label>
+                            <label class="lb1" for="Entidad">Institución de la que proviene </label>
+                            <label class="lb2" for="Programa_pasantias">Programa académico</label>
                         </div>
                         <div class="form-row1">
-                            <input type="text" class="form-control1" id="Entidad" name="Entidad" placeholder="Seleccione la Entidad" required>
+                            <input type="text" class="form-control1" id="Entidad" name="Entidad" placeholder="Nombre completo de la institución" required>
                             <input type="text" class="form-control2" id="Programa_pasantias" name="Programa_pasantias"  placeholder="Digite el programa" required>
                         </div>
                         <div class="form-row">
@@ -115,12 +121,10 @@
                         </div>
                         <div class="form-row1">
                             <input type="text" class="form-control1" id="Medio_ent" name="Medio_ent"  placeholder="Digite el medio" required>
-                            <select id="Area_pas" class="form-control2" name="Area_pas" required>
-                                <option value="">Seleccionar Área</option>
-                                <option value="OTI">Oficina de tecnologías</option>
-                                <option value="Soporte">Soporte</option>
-                                <option value="Contractual">Contractual</option>
-                            </select>                        
+                            <?php
+                                include '../PHP/Dependencias.php';
+                                generarSelectDependencia();
+                            ?>                         
                         </div>
                         <div class="form-row">
                             <label class="lb1" for="Hoja_vida">Hoja de vida</label>
@@ -150,13 +154,15 @@
                         <div class="form-row1">
                             <input type="date" class="form-control1" id="Fec_ini_pas" name="Fec_ini_pas"  placeholder="Fecha de inicio pasantias" required>
                         </div>
-                        <button type="submit" name="setPostulacionpasantias" class="btn-reg">Registrarse</button>
+                        <button type="submit" name="setPostulacionpasantias" class="btn-reg">Registrar</button>
                     </form>
                 </div>
             </main>
         </div>
     </div>
+    <br><br><br>    
     <footer>
+        <br> 
         <div class="container container-footer mb-5 px-4 py-5" id="principal-section-footer">
             <div class="region region-footer">
                 <div class="d-block">

@@ -1,3 +1,9 @@
+<?php
+session_start(); // Esto debe ser lo primero en el archivo
+require_once('../PHP/VerificacionAcceso.php');
+verificarAcceso();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -101,7 +107,7 @@
                     <button class="btn btn-primary" onclick="location.href='VExp_lab1_tutor.php'">Agregar Nueva exp laboral</button>
                 </div>
                 <!-- Tabla -->
-                <div style="max-height: 400px; overflow-y: auto;">
+                <div style="max-height: 1000px; overflow-y: auto;">
                 <table class="table table-bordered table-hover">
                     <thead class="table-dark">
                         <tr>
@@ -110,7 +116,7 @@
                             <th>Cargo</th>
                             <th>Fecha de ingreso</th>
                             <th>Fecha de salida</th>
-                            <th>¿Empleo actual?</th>
+                            <th>¿Labora actualmente?</th>
                             <th>Horario</th>
                             <th>Acción</th>
                         </tr>
@@ -119,8 +125,9 @@
                     <?php
                         try {
                             // Conexión con PDO a SQL Server
-                            $co = new PDO("sqlsrv:server=SRVVSANDIEGO\\SRVDESARROLLO;Database=ADMINISTRATIVA", "klozanoq", "Colombia2023*");
-                            $co->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                            require_once(__DIR__ . '/../Config/db.php');
+                            $pdo = new db();
+                            $co = $pdo->conexion();
                             
                             // Consulta a la base de datos
                             $sql = "SELECT * FROM RPPI.ExperienciaLaboral";
@@ -171,7 +178,7 @@
                                                 <input type="date" class="form-control" id="Fechat" name="Fec_fin" value="<?php echo $mostrar['Fec_fin']; ?>">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="Respuesta5" class="form-label">¿Empleo actual?</label>
+                                                <label for="Respuesta5" class="form-label">¿Labora actualmente?</label>
                                                 <select id="Eactual" class="form-control" name="Emp_actual" value="<?php echo $mostrar['Emp_actual']; ?>">
                                                     <option value="1">Seleccionar</option>
                                                     <option value="Si">Si</option>
@@ -205,7 +212,9 @@
             </main>
         </div>
     </div><br>
+    <br><br><br>    
     <footer>
+        <br> 
         <div class="container container-footer mb-5 px-4 py-5" id="principal-section-footer">
             <div class="region region-footer">
                 <div class="d-block">
